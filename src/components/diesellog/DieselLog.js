@@ -2,6 +2,8 @@ import './diesellog.scss'
 import React, { useState } from 'react'
 import Home from '../Home';
 import { DieselEntry } from '../../api/index'
+import { MdLibraryBooks } from 'react-icons/md';
+
 const DieselLog = () => {
     const [mandatoryfield, setMandatoryfield] = useState(false);
 
@@ -41,20 +43,21 @@ const DieselLog = () => {
                         <div className="card">
                             <header className="card-header">
 
-                                <h4 className="card-title mt-2">Diesel Log Entry</h4>
+                                <h4 className="card-title mt-2">Diesel Log Entry<MdLibraryBooks style={{margin:"0 0 5px 4px"}}/></h4>
                             </header>
 
 
                             <article className="card-body">
                                 <form>
-
-                                    <div className="form-group">
+                                   <div className='row'>
+                                    <div className="form-group col-md-6">
                                         <label>Date </label>
                                         <input type="Date" className="form-control" id="date" />
                                     </div> {/* form-group end.// */}
-                                    <div className="form-group">
+                                    <div className="form-group col-md-6">
                                         <label>Invoice no.</label>
                                         <input type="text" className="form-control" id="invoice_no" />
+                                    </div>
                                     </div>
 
                                     <div className="form-group">
@@ -72,13 +75,15 @@ const DieselLog = () => {
                                             <input className="form-control" type="number" id="rate_per_liter" />
                                         </div>
                                     </div>
-                                    <div className="form-group">
+                                    <div className='row'>
+                                    <div className="form-group col-md-6">
                                         <label>Total Amount</label>
                                         <input className="form-control" type="number" id="TotalAmount" />
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group col-md-6">
                                         <label>Person Name</label>
                                         <input className="form-control" type="text" id="person_name" />
+                                    </div>
                                     </div>
 
                                     <div className="form-row">
@@ -96,8 +101,8 @@ const DieselLog = () => {
                                             ? <p style={{ color: "red" }}>Please! fill the field...</p> : null
                                     }
                                     <div className="form-group">
-                                        <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-4">Submit</button>
-                                        <input type="reset" className="btn btn-secondary " value='Reset' />                                                                           </div> {/* form-group// */}
+                                        <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Submit</button>
+                                        <input type="reset" style={{background:"gray"}}className="btn btn-secondary " value='Reset' />                                                                           </div> {/* form-group// */}
                                 </form>
                             </article> {/* card-body end .// */}
 

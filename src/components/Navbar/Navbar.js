@@ -1,8 +1,17 @@
 import './navbar.scss';
 import Logo from "../../images/logo.png"
-import Warehouselogo from '../../images/warehouse.png'
-import React from 'react'
+import React, { useState } from 'react'
+import { TbLogout } from 'react-icons/tb';
+import { FaWarehouse } from 'react-icons/fa';
+import { AiFillCaretDown } from 'react-icons/ai';
+
 function Navbar({ openSidebar }) {
+
+    const [card, setCard] = useState(false)
+
+    const profileCard = () => {
+        setCard(!card)
+    }
 
     const handlelogout = () => {
         localStorage.clear();
@@ -10,39 +19,41 @@ function Navbar({ openSidebar }) {
     }
     return (
         <>
-            <nav className="navbar navcontainer navbar-expand-lg navbar-light  text-white">
+            <nav className="navbar navcontainer navbar-expand-lg navbar-light text-white " id="nav">
                 <a className="navbar-brand text-white navlogo" href="#" ><img src={Logo} /></a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" onClick={openSidebar}>
-                    <span className="navbar-toggler-icon" />
+                <button className="navbar-toggler" type="button" data-target="#nav1" data-toggle="collapse" onClick={openSidebar}>
+                    <span className="navbar-toggler-icon"/>
                 </button>
-                <div className="collapse  navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto navlinks">
-                        <li className="nav-item navlink ">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="ul" className="navbar-nav navlinks">
+                        <li id="li" className="nav-item navlink" >
                             <a className="nav-link" href="Dashboard">Home <span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item navlink ">
+                        <li id="li" className="nav-item navlink ">
                             <a className="nav-link" href="VisitorLogBook">Visitor Entry</a>
                         </li>
-                        <li className="nav-item navlink ">
+                        <li id="li" className="nav-item navlink ">
                             <a className="nav-link" href="Vehicle">Vehicle Entry</a>
                         </li>
-                        <li className="nav-item dropdown navlink">
+                        <li id="li" className="nav-item dropdown navlink">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 LogBook
                             </a>
-                            <div className="dropdown-menu ml-5 " aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item text-dark" href="/GeneratorLogBook">Generator LogBook</a>
-                                <a className="dropdown-item text-dark" href="/DieselLog">Diesel LogBook</a>
-                                <a className="dropdown-item text-dark" href="Warehouse"> Open/Close Warehouse LogBook</a>
+                            <div id="navdrop" className="dropdown-menu ml-5 " aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item text-dark" href="/GeneratorLogBook"><a id="i" >Generator LogBook</a></a>
+                                <a className="dropdown-item text-dark" href="/DieselLog"><a id="i">Diesel LogBook</a></a>
+                                <a className="dropdown-item text-dark" href="Warehouse"><a id="i">Open/Close Warehouse LogBook</a></a>
                             </div>
                         </li>
 
                     </ul>
                     <ul className="profilediv">
-                       <li className="warehouseplace" ><span className='staricon'><img src={Warehouselogo}/></span> {localStorage.getItem("Warehouse")}</li>&nbsp;
-                        <li className="profilelink" onClick={handlelogout} > 
-                        Logout
-                        </li>
+                        <li className="warehouseplace" onClick={profileCard}><span className='staricon'><FaWarehouse style={{ fontSize: "28px" }} /></span> {localStorage.getItem("Warehouse")}<AiFillCaretDown /><br />{card && (<div class="card" style={{ width: "10rem" }}>
+                            <div class="card-body" style={{ color:"red" }} onClick={handlelogout}>
+                                Logout <TbLogout style={{ margin: "0 3px 2px 0", fontSize: "21px" }} />
+                            </div>
+                        </div>)}</li>&nbsp;
+
                     </ul>
                 </div>
             </nav>

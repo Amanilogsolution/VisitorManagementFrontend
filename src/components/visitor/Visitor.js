@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './Visitor.css'
 import Home from '../Home';
 import { VisiterEntry, Allemployee,Sms,EmployeeAlerts } from '../../api/index'
-
+import { ImEnter } from 'react-icons/im';
 function Visitor() {
     const [selectdata, setSelectdata] = useState([]);
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -69,20 +70,22 @@ function Visitor() {
             <div className="generatorlogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
+                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }} id="main-visitor">
                         <div className="card" >
-                            <header className="card-header">
-                                <h4 className="card-title mt-2">Visitor Entry</h4>
+                            <header className="card-header" >
+                                <h4 className="card-title mt-2">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
                             </header>
                             <article className="card-body">
                                 <form>
-                                    <div className="form-group">
+                                    <div className='row'>
+                                    <div className="form-group col-md-6">
                                         <label>Visitor Name </label>
-                                        <input type="Text" className="form-control" id='visitor_name' />
+                                        <input type="Text" className="form-control" id='visitor_name' style={{width:"103%"}}/>
                                     </div>
-                                    <div className="form-group">
-                                        <label>Company Name </label>
-                                        <input type="text" className="form-control" id="company_name" />
+                                    <div className="form-group col-md-6">
+                                        <label>Company Name</label>
+                                        <input type="text" className="form-control" id="company_name" style={{marginLeft:"-10px",width:"103%"}}/>
+                                    </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
@@ -95,19 +98,21 @@ function Visitor() {
                                              maxLength={10}/>
                                         </div>
                                     </div>
-                                    <div className="form-group">
+                                    <div className='row'>
+                                    <div className="form-group col-md-6">
                                         <label>Email Id:</label>
-                                        <input className="form-control" type="email" id='email_id' />
+                                        <input className="form-control" type="email" id='email_id'style={{width:"103%"}} />
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group col-md-6" id='select'>
                                         <label>To Meet</label>
-                                        <select className="form-control" id='meeting_with' onChange={handleChange}>
+                                        <select className="form-control" id='meeting_with' onChange={handleChange} style={{marginLeft:"-10px",width:"103%"}}>
                                             <option defaultValue hidden>Choose ...</option>
                                         {selectdata.map((ele)=>(
                                             <option key={ele.UserID} value={ele.UserID}>{ele.Name}</option>
                                             ))}
                                         </select>
                                         <br/>
+                                    </div>
                                     </div>
                                     <div className="form-group">
                                         <label>Remarks</label>
@@ -118,7 +123,7 @@ function Visitor() {
                                             ? <p style={{ color: "red" }}>Please! fill the field...</p> : null
                                     }
                                     <div className="form-group">
-                                        <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-4">Submit</button>
+                                        <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-2">Submit</button>
                                         <button type="submit" className="btn btn-secondary ">Reset</button>
                                     </div>
                                 </form>

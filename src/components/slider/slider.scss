@@ -1,7 +1,7 @@
-$bgcolor:rgb(232, 237, 237);
+$bgcolor:silver;
 $textcolor:#000;
-$topdivbg:rgb(0, 0, 0);
-$test2:red;
+$topdivbg:rgb(39, 39, 52);
+$test2:white;
 
 .slidercontainer {
     height: 100%;
@@ -91,10 +91,10 @@ $test2:red;
                 padding: 0px 0px 0px 10px;
                 transition: all 0.5 linear;
                 cursor: pointer;
-
                 &:hover {
                     background: #fff;
                 }
+                
              
 
             }
@@ -211,7 +211,8 @@ $test2:red;
         .imgdiv {
             height: 115px;
             width: 115px;
-            background: $bgcolor;
+            background:linear-gradient(white,rgb(66, 66, 66));
+            border: 6px solid rgb(73, 73, 73);
             border-radius: 50%;
             position: absolute;
             bottom: -30%;
@@ -223,8 +224,7 @@ $test2:red;
             align-items: center;
 
             img {
-                height: 100px;
-                border-radius: 50%;
+                height: 40px;
                 width: 100px;
                 // border:2px solid red;
 
@@ -327,11 +327,12 @@ $test2:red;
         }
     }
 
-
-
+    #a{
+        color:rgb(39, 39, 52);
+        font-weight: 600;
+    }
 
 }
-
 @media screen and (max-width:400px) {
 
     .slidercontaineropen {

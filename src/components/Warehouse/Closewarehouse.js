@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Warehouseclose, UploadData } from '../../api'
+import { MdLibraryBooks } from 'react-icons/md';
 
 
 
@@ -75,11 +76,11 @@ function Closewarehouse(prop) {
 
           {/* <div className="row justify-content-center mt-5" style={{border:"2px solid red",width:"100%"}}> */}
           <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
-            <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "red" }}> Warehouse is Opened on {format_date} </span></h2>
+            <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Opened on {format_date} </span></h2>
 
             <div className="card">
               <header className="card-header">
-                <h4 className="card-title mt-2">Enter Warehouse Closing Entry</h4>
+                <h4 className="card-title mt-2">Enter Warehouse Closing Entry<MdLibraryBooks style={{margin:"0 0 4px 4px"}}/></h4>
               </header>
 
               {/* {loading?( */}
@@ -107,7 +108,7 @@ function Closewarehouse(prop) {
 
                   <div className="form-group">
                     <label>AWL Person Present</label>
-                    <input className="form-control" type="text" id="awlperson" />
+                    <input className="form-control" type="text" id="awlperson"/>
                   </div>
 
                   {
@@ -116,9 +117,9 @@ function Closewarehouse(prop) {
                   }
 
                   <div className="form-group">
-                    <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-4">Submit</button>
-                    <input type="reset" className="btn btn-secondary " value='Reset' />
-                    <button className="btn btn-success ml-4" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
+                    <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-2">Submit</button>
+                    <input style={{background:"gray"}} type="reset" className="btn btn-secondary " value='Reset' />
+                    <button className="btn btn-success ml-2" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
                   </div>
                 </form>
               </article>

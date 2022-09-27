@@ -2,6 +2,7 @@ import './generatorlog.scss'
 import React,{useState} from 'react'
 import Home from '../Home';
 import { GeneratorEntry } from '../../api/index'
+import { MdLibraryBooks } from 'react-icons/md';
 
 function GeneratorLog() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -37,7 +38,7 @@ function GeneratorLog() {
                     <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }} >
                         <div className="card" >
                             <header className="card-header">
-                                <h4 className="card-title mt-2">Generator Log Book Entry</h4>
+                                <h4 className="card-title mt-2">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
                             </header>
 
                             <article className="card-body">
@@ -88,8 +89,8 @@ function GeneratorLog() {
                                             ? <p style={{ color: "red" }}>Please! fill the field...</p> : null
                                     }
                                     <div className="form-group">
-                                        <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-4">Submit</button>
-                                        <input type="reset" className="btn btn-secondary " value='Reset' />
+                                        <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Submit</button>
+                                        <input type="reset" style={{background:"gray"}} className="btn btn-secondary" value='Reset' />
                                     </div>
                                 </form>
                             </article>

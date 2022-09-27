@@ -1,5 +1,10 @@
 $navbg: #f7f7f7;
-$textcolor:rgb(14, 14, 14);
+$textcolor: rgb(14, 14, 14);
+
+#nav {
+  background: rgb(39, 39, 52);
+  border-bottom: 1 px solid white;
+}
 
 .navcontainer {
   height: 80px;
@@ -24,34 +29,20 @@ $textcolor:rgb(14, 14, 14);
     .navlink {
       margin: 0px 10px 0px 10px;
       list-style: none;
-      font-size: 22px;
-
-      // :hover {
-      //   color: red;
-      // }
+      font-size: 19px;
+      font-weight: 600;
 
       a {
         text-decoration: none;
-        color: $textcolor;
-        }
+        color: white;
+
+      }
+
+      a:hover {
+        color: rgb(255, 255, 255);
+        width: 100%;
+      }
     }
-
-    // .outernavlinks{
-    //   .innernavlinks{
-    //     // display: none;
-    //     position: absolute;
-    //     background: gray;
-    //     color: white;
-    //     width: 400px;
-    //     padding: 10px ;
-    //     z-index: 100000;
-
-    //     .innernavlink{
-    //       list-style: none;
-    //     }
-    //   }
-      
-    // }
   }
 
   .profilediv {
@@ -62,41 +53,29 @@ $textcolor:rgb(14, 14, 14);
     flex-direction: row;
 
 
-    .warehouseplace{
+    .warehouseplace {
       list-style: none;
       // color:$textcolor;
       font-size: 18px;
       font-weight: 500;
       cursor: pointer;
-       margin: -15px 30px 0px 0px ;
-      color: rgb(0, 72, 255);
+      margin: -19px -80px 0px 0px;
+      color: rgb(255, 255, 255);
 
-      .staricon{
+      .staricon {
         font-size: 35px;
         height: 30px;
         width: 30px;
-        // border: 2px solid red;
-        // overflow: hidden;
-
-        img{
-          height: 30px;
-          width: 30px;
-        // border: 2px solid rgb(72, 0, 255);
-
-        }
       }
     }
+
     .profilelink {
       list-style: none;
-      color:$textcolor;
-      font-size: 22px;
+      font-size: 17px;
       font-weight: 500;
       cursor: pointer;
-
-   
-
+      color: white;
     }
-   
 
     .sliderbar {
       display: none;
@@ -104,36 +83,77 @@ $textcolor:rgb(14, 14, 14);
     }
   }
 
-
 }
 
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
 
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 0 3px 0;
+  background-color: white;
+  width: 0%;
+  content: "";
+  height: 3px;
+  transition: 0.5s;
+}
 
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
 
-// @media screen and (max-width:770px) {
-//   .navcontainer {
+#navdrop {
+  background: rgb(39, 39, 52);
+  border: 2px solid gray;
+}
 
-//     .navlogo {
-//       height: 75%;
-//     }
+#i {
+  color: white
+}
 
-//     .navlinks {
-//       display: none;
-//     }
+#i:hover {
+  color: black;
+}
 
-//     .profilediv 
-//     {
-//       // .profileimg{
-//       //   display: none;
-//       // }
+#li {
+  margin: 0 -15px 0 25px;
+}
 
-//       .sliderbar {
-//         display: flex;
-//         // margin-top: 10%;
-//         color: rgb(255, 242, 242);
-//         // border: 2px solid red;
-//       }
-//     }
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-light .navbar-toggler{
+  border:2px solid white
+}
 
-//   }
-// }
+@media (min-width: 1560px) {
+  #ul {
+    margin-left: 810px;
+  }
+
+  #li {
+    margin: 0 -22px 0 30px;
+  }
+}
+@media (min-device-width: 1400px) and (max-device-width: 1500px) {
+  #ul {
+    margin-left: 580px;
+  }
+
+  #li {
+    margin: 0 -22px 0 30px;
+  }
+}
+@media (min-device-width: 1300px) and (max-device-width: 1360px) {
+  #ul {
+    margin-left: 460px;
+  }
+
+  #li {
+    margin: 0 -22px 0 30px;
+  }
+}
