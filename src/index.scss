@@ -3,6 +3,9 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./images/bgimg3.jpg");
+  // background:linear-gradient(gray,white,gray);  
+  background-size: cover;
 }
 code{
   font-family: Roboto,source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;}
@@ -18,4 +21,10 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+@media screen and (min-device-width: 0) and (max-device-width: 1200px) { 
+  body{
+    background-size:contain;
+    background: url("./images/bgimg3.jpg");  
+  }
 }

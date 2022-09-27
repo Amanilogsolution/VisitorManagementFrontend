@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Warehouseopen, warehouseLastclose,UploadData } from '../../api/index'
+import { MdLibraryBooks } from 'react-icons/md';
 
 
 function Openwarehouse() {
@@ -92,10 +93,10 @@ function Openwarehouse() {
             <div className="openwarehousecontainer">
                 <div>
                     <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
-                        <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "red" }}> Warehouse is Closed on {last_date}</span></h2>
+                        <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Closed on {last_date}</span></h2>
                         <div className="card">
                             <header className="card-header">
-                                <h4 className="card-title mt-2">Enter Warehouse Opening Entry</h4>
+                                <h4 className="card-title mt-2">Enter Warehouse Opening Entry <MdLibraryBooks style={{margin:"0 0 4px 4px"}}/></h4>
                             </header>
                             {/* {loading?( */}
                                 
@@ -125,9 +126,9 @@ function Openwarehouse() {
                                             ? <p style={{ color: "red" }}>Please! fill the field OR Upload Image...</p> : null
                                     }
                                     <div className="form-group">
-                                        <button type="submit" id="submitBtn" className="btn btn-primary mr-4" onClick={handlesave}>Submit</button>
-                                        <input type="reset" className="btn btn-secondary " value='Reset' />
-                                        <button className="btn btn-success ml-4" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
+                                        <button type="submit" id="submitBtn" className="btn btn-primary mr-2" onClick={handlesave}>Submit</button>
+                                        <input type="reset" style={{background:"gray"}} className="btn btn-secondary " value='Reset' />
+                                        <button className="btn btn-success ml-2" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
                                     </div>
                                 </form>
                             </article>

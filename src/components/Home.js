@@ -1,23 +1,23 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './home.scss';
 import Navbar from './Navbar/Navbar'
 import Slider from './slider/Slider';
-const Home=()=>{
+const Home = () => {
 
-   const[slider,setSlider] =useState(false);
+   const [slider, setSlider] = useState(false);
 
-   const toggleslider =()=>{
+   const toggleslider = () => {
       setSlider(!slider)
    }
 
-   return(
-       <>
-          <div className="homecontainer">
-          <Navbar openSidebar={toggleslider}/> 
-          <Slider slider={slider} openSidebar={toggleslider}/>
- 
-          </div>
-       </>
+   return (
+      <>
+         <div className="homecontainer">
+            <Navbar openSidebar={toggleslider} />
+            <Slider slider={slider} openSidebar={toggleslider} />
+            
+         </div>
+      </>
    )
 }
 
