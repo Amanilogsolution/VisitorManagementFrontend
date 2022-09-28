@@ -19,13 +19,13 @@ function Navbar({ openSidebar }) {
     }
     return (
         <>
-            <nav className="navbar navcontainer navbar-expand-lg navbar-light text-white " id="nav">
-                <a className="navbar-brand text-white navlogo" href="#" ><img src={Logo} /></a>
+            <nav className="navbar navcontainer navbar-expand-lg navbar-light text-white  " id="nav">
+                <a className="navbar-brand text-white navlogo mb-2" href="#" ><img src={Logo} /></a>
                 <button className="navbar-toggler" type="button" data-target="#nav1" data-toggle="collapse" onClick={openSidebar}>
                     <span className="navbar-toggler-icon"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul id="ul" className="navbar-nav navlinks">
+                    <ul id="ul" className="navbar-nav navlinks ms-auto mb-2 mb-lg-0 ">
                         <li id="li" className="nav-item navlink" >
                             <a className="nav-link" href="Dashboard">Home <span className="sr-only">(current)</span></a>
                         </li>
@@ -45,16 +45,18 @@ function Navbar({ openSidebar }) {
                                 <a className="dropdown-item text-dark" href="Warehouse"><a id="i">Open/Close Warehouse LogBook</a></a>
                             </div>
                         </li>
-
-                    </ul>
-                    <ul className="profilediv">
-                        <li className="warehouseplace" onClick={profileCard}><span className='staricon'><FaWarehouse style={{ fontSize: "28px" }} /></span> {localStorage.getItem("Warehouse")}<AiFillCaretDown /><br />{card && (<div class="card" style={{ width: "10rem" }}>
+                        <li>
+                        <ul className="profilediv">
+                        <li className="warehouseplace" onClick={profileCard}><span className='staricon'><FaWarehouse style={{ fontSize: "25px" }} /></span> {localStorage.getItem("Warehouse")}<AiFillCaretDown style={{margin:"0 4px 4px 0"}}/><br />{card && (<div class="card" style={{ width: "8rem" }}>
                             <div class="card-body" style={{ color:"red" }} onClick={handlelogout}>
-                                Logout <TbLogout style={{ margin: "0 3px 2px 0", fontSize: "21px" }} />
+                                Logout <TbLogout style={{ margin: "0 3px 2px 0", fontSize: "19px" }} />
                             </div>
-                        </div>)}</li>&nbsp;
-
+                        </div>)}</li>
+                         
                     </ul>
+                    </li>
+                    </ul>
+                  
                 </div>
             </nav>
 

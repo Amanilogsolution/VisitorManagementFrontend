@@ -34,35 +34,35 @@ function Vehicle() {
             <div className="generatorlogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
+                    <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
                         <div className="card">
                             <header className="card-header">
-                                <h4 className="card-title mt-2">Vehicle Entry<FaTruck style={{ marginLeft: "6px" }} /></h4>
+                                <h4 className="card-title mt-1">Vehicle Entry<FaTruck style={{ marginLeft: "6px" }} /></h4>
                             </header>
                             <article className="card-body">
                                 <form>
-                                    <div className='row'>
+                                    <div className='row' style={{marginTop:"-10px"}} >
                                         <div className="form-group col-md-6">
                                             <label>Entry Type </label>
-                                            <select className="form-control" id='entry_type' style={{ background: "none", border: "none", borderBottom: "3px solid rgb(84, 84, 85)",width:"103%" }}>
+                                            <select className="form-control" id='entry_type' style={{ background: "none", border: "none", borderBottom: "3px solid rgb(84, 84, 85)",width:"103%",marginTop:"-6px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option value="IN">IN</option>
                                                 <option value="OUT">OUT</option>
                                             </select>
                                         </div>
-                                        <div className="form-group col-md-6">
+                                        <div className="form-group col-md-6" >
                                             <label>Document Number </label>
                                             <input type="text" className="form-control" id="Document_no" style={{marginLeft:"-10px",width:"103%"}} />
                                         </div>
                                     </div>
 
                 
-                                    <div className="form-group">
+                                    <div className="form-group" style={{marginTop:"-10px"}}>
                                         <label>Party Name </label>
                                         <input type="text" className="form-control" id="party_name" />
                                     </div>
 
-                                    <div className="form-row" style={{ marginBottom: "-30px" }}>
+                                    <div className="form-row" style={{marginTop:"-10px"}}> 
                                         <div className="form-group col-md-6">
                                             <label>Vehicle Number </label>
                                             <input type="text" className="form-control" id='vehicle_no' />
@@ -70,7 +70,7 @@ function Vehicle() {
 
                                         <div className="form-group col-md-6">
                                             <label>Vehicle Type :</label>
-                                            <select className="form-control" id='vehicle_type' style={{ background: "none", border: "none", borderBottom: "3px solid rgb(84, 84, 85)" }}   >
+                                            <select className="form-control" id='vehicle_type' style={{ background: "none", border: "none", borderBottom: "3px solid rgb(84, 84, 85)",marginTop:"-6px" }}   >
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option value="14 Ft">14 Ft</option>
                                                 <option value="17 Ft">17 Ft</option>
@@ -108,7 +108,7 @@ function Vehicle() {
                                     </div>
 
 
-                                    <div className="form-row">
+                                    <div className="form-row" style={{marginTop:"-30px"}}>
                                         <div className="form-group col-md-6">
                                             <label>Driver Name  </label>
                                             <input type="text" className="form-control" id='driver_name' />
@@ -122,7 +122,7 @@ function Vehicle() {
                                         </div>
                                     </div>
 
-                                    <div className="form-group">
+                                    <div className="form-group" style={{marginTop:"-10px"}}>
                                         <label>Remarks</label>
                                         <textarea className="form-control" type="text" id='remark' />
                                     </div>

@@ -75,7 +75,7 @@ function Closewarehouse(prop) {
         <div>
 
           {/* <div className="row justify-content-center mt-5" style={{border:"2px solid red",width:"100%"}}> */}
-          <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
+          <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
             <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Opened on {format_date} </span></h2>
 
             <div className="card">
@@ -118,7 +118,7 @@ function Closewarehouse(prop) {
 
                   <div className="form-group">
                     <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-2">Submit</button>
-                    <input style={{background:"gray"}} type="reset" className="btn btn-secondary " value='Reset' />
+                    <input style={{background:"gray",marginTop:"2px"}} type="reset" className="btn btn-secondary " value='Reset' />
                     <button className="btn btn-success ml-2" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
                   </div>
                 </form>

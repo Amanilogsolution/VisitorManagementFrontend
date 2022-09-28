@@ -24,7 +24,7 @@ function Slider({ slider, openSidebar }) {
     }
     return (
         <>
-            <div className={slider ? "slidercontaineropen" : "slidercontainer"}>
+            <div className={slider ? "slidercontaineropen" : "slidercontainer"} style={{position:"fixed",width:"270px"}}>
                 <div className="closebox">
                     <span onClick={openSidebar}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" fill="white"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z" /></svg></span>
@@ -42,22 +42,22 @@ function Slider({ slider, openSidebar }) {
                     <ul className="listitems">
                         <li className="listitem">
                            
-                            <a href='Dashboard'><a id="a"><ImHome style={{margin:'0 10px 6px 2px'}}/>Home</a></a></li>
+                            <a href='Dashboard'><ImHome style={{margin:'0 10px 6px 2px'}}/>Home</a></li>
                         <li className="listitem">
-                            <a href="VisitorLogBook" ><a id="a"><ImEnter style={{margin:'0 9px 6px 0'}}/>Visitor Entry</a></a></li>
+                            <a href="VisitorLogBook" ><ImEnter style={{margin:'0 9px 6px 0'}}/>Visitor Entry</a></li>
                         <li className="listitem">
                 
-                            <a href="Vehicle"><a id="a"><FaTruck style={{margin:'0 8px 6px 2px'}} />Vehicle Entry</a></a></li>
+                            <a href="Vehicle"><FaTruck style={{margin:'0 8px 6px 2px'}} />Vehicle Entry</a></li>
                         <li className="listitem outerlist" onClick={togglediv}>
-                            <a><a id="a"><FaBook style={{margin:'0 9px 6px 2px'}}/>LogBook<AiFillCaretDown style={{margin:'0 10px 0 4px'}}/></a></a>
+                            <a><FaBook style={{margin:'0 9px 6px 2px'}}/>LogBook<AiFillCaretDown style={{margin:'0 10px 0 4px'}}/></a>
                             {show ?
                                 <ul className="innerlistes">
                                     <a href="/GeneratorLogBook"><li className="innerliste">
-                                    <a id="a">Generator LogBook</a></li></a>
+                                    Generator LogBook</li></a>
                                     <a href="/DieselLog"> <li className="innerliste" style={{ width: "100%" }}>
-                                    <a id="a">Desiel LogBook</a></li></a>
+                                    Desiel LogBook</li></a>
                                     <a href="Warehouse"><li className="innerliste">
-                                    <a id="a"> Warehouse LogBook</a></li></a>
+                                     Warehouse LogBook</li></a>
                                 </ul>
                                 : null
                             }
