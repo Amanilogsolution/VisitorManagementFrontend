@@ -35,25 +35,25 @@ function GeneratorLog() {
 
                 <div>
                     {/* <div className="row justify-content-center mt-2 mb-5" style={{ width: "100%" }}> */}
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }} >
+                    <div className="col-md-6 mt-5" style={{ margin: "auto" }} >
                         <div className="card" >
-                            <header className="card-header">
-                                <h4 className="card-title mt-2">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
+                            <header className="card-header" >
+                                <h4 className="card-title mt-1">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
                             </header>
 
                             <article className="card-body">
                                 <form>
 
-                                    <div className="form-group">
+                                    <div className="form-group"style={{marginTop:"-12px"}}>
                                         <label>Date </label>
                                         <input type="Date" className="form-control" id='date' />
                                     </div> {/* form-group end.// */}
-                                    <div className="form-group">
+                                    <div className="form-group" style={{marginTop:"-10px"}}>
                                         <label>Start Time</label>
                                         <input type="time" className="form-control" placeholder="Start Time" id="starttime" />
                                     </div>
 
-                                    <div className="form-group">
+                                    <div className="form-group"  style={{marginTop:"-10px"}}>
                                         <label>Start Reading</label>
                                         <input type="number" className="form-control" placeholder="Reading" id="startreading" />
                                     </div> {/* form-group end.// */}
@@ -76,11 +76,11 @@ function GeneratorLog() {
                                         </div> 
                                     </div> form-row.// */}
 
-                                    <div className="form-group">
+                                    <div className="form-group" style={{marginTop:"-10px"}}>
                                         <label>End Time</label>
                                         <input className="form-control" type="time" id='endtime' />
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group"  style={{marginTop:"-10px"}}>
                                         <label>End Reading</label>
                                         <input className="form-control" type="number" placeholder="Reading" id='endreading' />
                                     </div>
@@ -90,7 +90,7 @@ function GeneratorLog() {
                                     }
                                     <div className="form-group">
                                         <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Submit</button>
-                                        <input type="reset" style={{background:"gray"}} className="btn btn-secondary" value='Reset' />
+                                        <input type="reset" style={{background:"gray",marginTop:"2px"}} className="btn btn-secondary" value='Reset' />
                                     </div>
                                 </form>
                             </article>

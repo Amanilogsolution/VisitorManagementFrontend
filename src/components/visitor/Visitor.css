@@ -1,6 +1,7 @@
 .card-header{
     background: rgb(39, 39, 52);
     color: white;
+    height: 60px;
 }
 .card-body{
     background: rgb(227, 225, 225);
@@ -9,6 +10,7 @@
     background:none;
     border: none;
     border-bottom: 3px solid rgb(84, 84, 85);
+    margin-top: -6px;
    
 }
 #select select{
@@ -16,6 +18,10 @@
     border: none;
     border-bottom: 3px solid rgb(84, 84, 85);
 }
+.card-body input:focus{
+    background:none;
+    outline: none;
+  }
 #remark{
     background: none;
     border: none;
@@ -39,4 +45,8 @@ option:hover{
 label{
     color: rgb(39, 39, 52);
     font-weight: 600;
+    font-size: 14px;
+}
+.card-title{
+    font-size: 20px;
 }

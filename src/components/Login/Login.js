@@ -46,12 +46,14 @@ function Login() {
                             </div>
                             <div className="d-flex justify-content-center form_container">
                                 <form>
-                                    <h4 className='mb-4 text-center' style={{color:"white"}}>Login<RiLoginCircleFill style={{margin:"0 0 4px 5px"}}/></h4>
-                                    <div className="input-group mb-3">
+                                    <h4 className='mb-4 text-center' style={{color:"white"}}>LOG IN
+                                    {/* <RiLoginCircleFill style={{margin:"0 0 4px 5px"}}/> */}
+                                    </h4>
+                                    <div className="input-group mb-3" style={{borderBottom:"3px solid white"}}>
                                         <FaUser style={{color:"white",margin:"15px 6px 0 0",fontSize:"20px"}} />
                                         <input type="text" className='input' id="username" placeholder="Username" onChange={()=>{setShowerror(false)}}/>
                                     </div>
-                                    <div className="input-group mb-2">
+                                    <div className="input-group mb-2" style={{borderBottom:"3px solid white"}}>
                                         {
                                         showpass?
                                         <GoEye onClick={toggleicon} style={{color:"white",margin:"15px 6px 0 0",fontSize:"20px"}}/>

@@ -24,7 +24,8 @@ input[type=number] {
 }
 @media screen and (min-device-width: 0) and (max-device-width: 1200px) { 
   body{
-    background-size:contain;
-    background: url("./images/bgimg3.jpg");  
+    background-size:cover;
+    background-repeat: no-repeat;
+    background: url("./images/bgimg3sm.jpg");  
   }
 }

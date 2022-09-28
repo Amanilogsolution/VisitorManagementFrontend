@@ -39,7 +39,7 @@ const DieselLog = () => {
             <div className="diesellogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
+                    <div className="col-md-6 mt-5" style={{ margin: "auto" }}>
                         <div className="card">
                             <header className="card-header">
 
@@ -49,23 +49,23 @@ const DieselLog = () => {
 
                             <article className="card-body">
                                 <form>
-                                   <div className='row'>
+                                   <div className='row' style={{marginTop:"-10px"}}>
                                     <div className="form-group col-md-6">
                                         <label>Date </label>
                                         <input type="Date" className="form-control" id="date" />
                                     </div> {/* form-group end.// */}
-                                    <div className="form-group col-md-6">
+                                    <div className="form-group col-md-6" >
                                         <label>Invoice no.</label>
                                         <input type="text" className="form-control" id="invoice_no" />
                                     </div>
                                     </div>
 
-                                    <div className="form-group">
+                                    <div className="form-group" style={{marginTop:"-10px"}}>
                                         <label>Party Name</label>
                                         <input type="text" className="form-control" placeholder="" id="party_name" />
                                     </div> {/* form-group end.// */}
 
-                                    <div className="form-row">
+                                    <div className="form-row"  style={{marginTop:"-10px"}}>
                                         <div className="col form-group">
                                             <label>Qty in Liter</label>
                                             <input className="form-control" type="number" id="qtyin_liter" />
@@ -75,7 +75,7 @@ const DieselLog = () => {
                                             <input className="form-control" type="number" id="rate_per_liter" />
                                         </div>
                                     </div>
-                                    <div className='row'>
+                                    <div className='row' style={{marginTop:"-10px"}}>
                                     <div className="form-group col-md-6">
                                         <label>Total Amount</label>
                                         <input className="form-control" type="number" id="TotalAmount" />
@@ -86,7 +86,7 @@ const DieselLog = () => {
                                     </div>
                                     </div>
 
-                                    <div className="form-row">
+                                    <div className="form-row"  style={{marginTop:"-10px"}}>
                                         <div className="col form-group">
                                             <label>Out Time</label>
                                             <input className="form-control" type="time" id="out_time" />
@@ -102,7 +102,7 @@ const DieselLog = () => {
                                     }
                                     <div className="form-group">
                                         <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Submit</button>
-                                        <input type="reset" style={{background:"gray"}}className="btn btn-secondary " value='Reset' />                                                                           </div> {/* form-group// */}
+                                        <input type="reset" style={{background:"gray",marginTop:"2px"}}className="btn btn-secondary mt-1 " value='Reset' />                                                                           </div> {/* form-group// */}
                                 </form>
                             </article> {/* card-body end .// */}
 

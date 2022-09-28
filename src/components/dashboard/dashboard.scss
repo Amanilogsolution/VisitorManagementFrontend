@@ -7,7 +7,7 @@
 }
 @media screen and (min-device-width: 0) and (max-device-width: 480px) { 
     .dashboardcont h1{
-        margin: 40% 0 20% 12%;
+        margin: 40% 7% 20% 12%;
         font-size: 3em;
     }
   }
@@ -31,5 +31,10 @@
   @media screen and (min-device-width: 480px) and (max-device-width: 1000px) { 
     .dashboardcont h1{
         font-size: 4em
+    }
+  }
+  @media screen and (max-device-width: 1550px) { 
+    .dashboardcont h1{
+      margin: 13% 0 20% 13%;
     }
   }

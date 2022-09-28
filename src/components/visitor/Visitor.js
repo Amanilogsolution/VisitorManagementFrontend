@@ -70,10 +70,10 @@ function Visitor() {
             <div className="generatorlogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }} id="main-visitor">
+                    <div className="col-md-6 mt-5" style={{ margin: "auto" }} id="main-visitor">
                         <div className="card" >
                             <header className="card-header" >
-                                <h4 className="card-title mt-2">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
+                                <h4 className="card-title mt-1">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
                             </header>
                             <article className="card-body">
                                 <form>
@@ -105,7 +105,7 @@ function Visitor() {
                                     </div>
                                     <div className="form-group col-md-6" id='select'>
                                         <label>To Meet</label>
-                                        <select className="form-control" id='meeting_with' onChange={handleChange} style={{marginLeft:"-10px",width:"103%"}}>
+                                        <select className="form-control" id='meeting_with' onChange={handleChange} style={{marginLeft:"-10px",width:"103%",marginTop:"-6px"}}>
                                             <option defaultValue hidden>Choose ...</option>
                                         {selectdata.map((ele)=>(
                                             <option key={ele.UserID} value={ele.UserID}>{ele.Name}</option>
@@ -114,7 +114,7 @@ function Visitor() {
                                         <br/>
                                     </div>
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group"style={{marginTop:"-30px"}}>
                                         <label>Remarks</label>
                                         <textarea className="form-control" type="text" id='remark' />
                                     </div>

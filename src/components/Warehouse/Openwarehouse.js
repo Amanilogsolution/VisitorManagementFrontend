@@ -92,7 +92,7 @@ function Openwarehouse() {
         <>
             <div className="openwarehousecontainer">
                 <div>
-                    <div className="col-md-6 mt-5 mb-5" style={{ margin: "auto" }}>
+                    <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
                         <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Closed on {last_date}</span></h2>
                         <div className="card">
                             <header className="card-header">
@@ -127,7 +127,7 @@ function Openwarehouse() {
                                     }
                                     <div className="form-group">
                                         <button type="submit" id="submitBtn" className="btn btn-primary mr-2" onClick={handlesave}>Submit</button>
-                                        <input type="reset" style={{background:"gray"}} className="btn btn-secondary " value='Reset' />
+                                        <input type="reset" style={{background:"gray",marginTop:"2px"}} className="btn btn-secondary " value='Reset' />
                                         <button className="btn btn-success ml-2" onClick={(e) => { e.preventDefault() }} data-toggle="modal" data-target="#exampleModal">Upload Image</button>
                                     </div>
                                 </form>
