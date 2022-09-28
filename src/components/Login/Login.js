@@ -51,7 +51,7 @@ function Login() {
                                     </h4>
                                     <div className="input-group mb-3" style={{borderBottom:"3px solid white"}}>
                                         <FaUser style={{color:"white",margin:"15px 6px 0 0",fontSize:"20px"}} />
-                                        <input type="text" className='input' id="username" placeholder="Username" onChange={()=>{setShowerror(false)}}/>
+                                        <input type="text" className='input' autocomplete="off" id="username" placeholder="Username" onChange={()=>{setShowerror(false)}}/>
                                     </div>
                                     <div className="input-group mb-2" style={{borderBottom:"3px solid white"}}>
                                         {
