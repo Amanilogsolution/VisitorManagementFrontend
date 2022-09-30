@@ -61,4 +61,11 @@ export const UploadData = async (data) => {
     return axios.post(url, data).then(res => res.data).catch(err => console.log(err))
 }
 
+export const DashboardWarehouseStatus = async (date,warehouseid) => {
+    const url = `http://localhost:8004/api/dashboardwarehousestatus`
+    return axios.post(url, {date,warehouseid}).then(res => res.data).catch(err => console.log(err))
+}
+
+
+
 

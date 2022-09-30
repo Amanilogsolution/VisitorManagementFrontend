@@ -12,6 +12,16 @@ function Visitor() {
     
     useEffect(() => {
         async function fetchMyAPI() {
+            var myDate = new Date();
+            var day = myDate.getDate();
+            var month = myDate.getMonth() + 1;
+            var year = myDate.getFullYear();
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+            var startDate = year + "-" + month + "-" + day;
+            document.getElementById('entrydate').value = startDate
+
+
             const result = await Allemployee(localStorage.getItem("warehouseId"));
        
             setSelectdata(result)
@@ -79,12 +89,28 @@ function Visitor() {
                                 <form>
                                     <div className='row'>
                                     <div className="form-group col-md-6">
+                                        <label>Entry Date </label>
+                                        <input type="date" id="entrydate" className="form-control" style={{width:"103%"}}/>
+                                    </div>
+                                    <div className="form-group col-md-6">
                                         <label>Visitor Name </label>
                                         <input type="Text" className="form-control" id='visitor_name' style={{width:"103%"}}/>
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label>Company Name</label>
-                                        <input type="text" className="form-control" id="company_name" style={{marginLeft:"-10px",width:"103%"}}/>
+                                        <input type="text" className="form-control" id="company_name" style={{width:"103%"}}/>
+                                    </div>
+                                    <div className="form-group col-md-6" id='select'>
+                                        <label>Purpose</label>
+                                        <select className="form-control" id='meeting_with' onChange={handleChange} style={{marginLeft:"-10px",width:"103%",marginTop:"-6px"}}>
+                                            <option defaultValue hidden>Choose ...</option>
+                                            <option value='Vendor' >Vendor</option>
+                                            <option value='Customer' >Customer</option>
+                                            <option value='Interview' >Interview</option>
+                                            <option value='Delivery' >Delivery</option>
+                                            <option value='Other' >Other</option>
+                                        </select>
+                                        <br/>
                                     </div>
                                     </div>
                                     <div className="form-row">
@@ -98,11 +124,13 @@ function Visitor() {
                                              maxLength={10}/>
                                         </div>
                                     </div>
-                                    <div className='row'>
+
+                                <div className='row'>
                                     <div className="form-group col-md-6">
                                         <label>Email Id:</label>
                                         <input className="form-control" type="email" id='email_id'style={{width:"103%"}} />
                                     </div>
+                               
                                     <div className="form-group col-md-6" id='select'>
                                         <label>To Meet</label>
                                         <select className="form-control" id='meeting_with' onChange={handleChange} style={{marginLeft:"-10px",width:"103%",marginTop:"-6px"}}>
@@ -112,7 +140,8 @@ function Visitor() {
                                             ))}
                                         </select>
                                         <br/>
-                                    </div>
+                                </div>
+                                    
                                     </div>
                                     <div className="form-group"style={{marginTop:"-30px"}}>
                                         <label>Remarks</label>
