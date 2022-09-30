@@ -52,7 +52,6 @@ export const EmployeeAlerts = async (Warehouse,UserID) =>{
 }
 
 export const VehicleEntry = async (docNo,vehNo,vehType,driverName,contactNo,remarks,wh,cust,entry_by,tpt_mode) =>{
-    console.log(docNo,vehNo,vehType,driverName,contactNo,remarks,wh,cust,entry_by,tpt_mode)
     const url = `https://vmbackend.awlinternational.com/api/vehicleentry`
     return axios.post(url,{docNo,vehNo,vehType,driverName,contactNo,remarks,wh,cust,entry_by,tpt_mode}).then(response => response.data).catch(error => console.log(error));
 }
@@ -62,10 +61,11 @@ export const UploadData = async (data) => {
     return axios.post(url, data).then(res => res.data).catch(err => console.log(err))
 }
 
+export const DashboardWarehouseStatus = async (date,warehouseid) => {
+    const url = `http://localhost:8004/api/dashboardwarehousestatus`
+    return axios.post(url, {date,warehouseid}).then(res => res.data).catch(err => console.log(err))
+}
 
-// export const Sms = async (number,visitor_name,company_name) => {
-//     console.log('ApI',number,visitor_name,company_name)
-//     const text =  `${visitor_name} from ${company_name} Came to Meet you`;
-//     const url = `http://192.168.146.19:3000/91${number}/sendText/`
-//     return axios.post(url, {text}).then(response => response.data).catch(error => console.log(error));
-// }
+
+
+
