@@ -71,10 +71,9 @@ const InsertGuard = () => {
         <div className="Total_Glogs">
         <Home />
 
-            
             <div className="row d-flex justify-content-center align-items-center" style={{width:"100%"}}>
                 <div className="col col-md-6">
-                    <h2>Add Guard</h2>
+                    {/* <h2>Add Guard</h2> */}
                     <h2 className='text-center mt-5'>Add Guard</h2>
                     <div className="card p-3 my-3 mb-5">
                         <form>
@@ -83,13 +82,12 @@ const InsertGuard = () => {
 
                                 <div className="form-group col-md-6"  style={{marginBottom:"-1px"}}>
                                     <label htmlFor="Invoice_Amount">Vendor ID <span style={{ color: "red" }}>*</span></label>
-                                    <input className="form-control" type="text" id="vendid" disabled value={localStorage.getItem('inputname')} />
+                                    <input className="form-control" type="text" id="vendid"/>
                                 </div>
                                 <div className="form-group col-md-6" style={{marginBottom:"-1px"}} >
                                     <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
-                                    <input className="form-control" type="text" id="vendname" disabled value={localStorage.getItem('cust_name')} />
+                                    <input className="form-control" type="text" id="vendname"/>
                                 </div>
-
                             </div>
 
                             <div className="mb-1">
@@ -124,8 +122,6 @@ const InsertGuard = () => {
                                     <label htmlFor="Invoice_Amount" className="form-label">Vendor ID <span style={{ color: "red" }}>*</span></label>
                                     <input className="form-control" type="text" id="vendid" disabled value={localStorage.getItem('inputname')} />
                                 </div> */}
-
-
 
 
                                 <div className='row' style={{paddingBottom:"-2px"}}>
