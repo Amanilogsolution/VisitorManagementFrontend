@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Home from '../Home';
 import { VehicleEntry } from '../../api/index';
 import { FaTruck } from 'react-icons/fa';
+import Footer from '../footer/Footer';
 
 function Vehicle() {
 
@@ -34,7 +35,7 @@ function Vehicle() {
             <div className="generatorlogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
+                    <div className="col-md-6" style={{ margin: "100px auto" }}>
                         <div className="card">
                             <header className="card-header">
                                 <h4 className="card-title mt-1">Vehicle Entry<FaTruck style={{ marginLeft: "6px" }} /></h4>
@@ -140,6 +141,7 @@ function Vehicle() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

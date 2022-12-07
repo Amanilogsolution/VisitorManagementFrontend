@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Warehouseclose, UploadData } from '../../api'
 import { MdLibraryBooks } from 'react-icons/md';
+import Footer from '../footer/Footer';
 
 
 
@@ -75,7 +76,7 @@ function Closewarehouse(prop) {
         <div>
 
           {/* <div className="row justify-content-center mt-5" style={{border:"2px solid red",width:"100%"}}> */}
-          <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
+          <div className="col-md-6" style={{ margin: "100px auto" }}>
             <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Opened on {format_date} </span></h2>
 
             <div className="card">
@@ -157,6 +158,7 @@ function Closewarehouse(prop) {
         </div>
 
       </div>
+      <Footer/>
     </>
   )
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Home from '../Home';
 import { DieselEntry } from '../../api/index'
 import { MdLibraryBooks } from 'react-icons/md';
+import Footer from '../footer/Footer';
 
 const DieselLog = () => {
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -39,7 +40,7 @@ const DieselLog = () => {
             <div className="diesellogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5" style={{ margin: "auto" }}>
+                    <div className="col-md-6" style={{ margin: "100px auto" }}>
                         <div className="card">
                             <header className="card-header">
 
@@ -110,7 +111,7 @@ const DieselLog = () => {
                         </div>
 
                     </div></div></div>
-            {/* </div> */}
+            <Footer/>
         </>
     )
 }

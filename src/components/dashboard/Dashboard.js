@@ -2,6 +2,7 @@ import './dashboard.scss';
 import Home from '../Home';
 import {DashboardWarehouseStatus} from '../../api/index'
 import React,{useEffect,useState} from 'react'
+import Footer from '../footer/Footer';
 
 
 const Dashboard = () => {
@@ -34,29 +35,9 @@ const Dashboard = () => {
 
                 <Home />
                 <h1>Welcome to AWL India</h1>
-
-                <div class="row ml-5 mt-5">
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body d-flex justify-content-center">
-                                <h5 class="card-title">{warehouseStatus}</h5> &nbsp;
-                                <div class="dot" style={{height:"25px",width:"25px",backgroundColor:"light-green",borderRadius:"50%"}}></div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
+            
+         {/* <Footer/> */}
         </>
     )
 }

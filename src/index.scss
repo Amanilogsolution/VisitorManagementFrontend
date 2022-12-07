@@ -6,6 +6,7 @@ body{
   background: url("./images/bgimg3.jpg");
   // background:linear-gradient(gray,white,gray);  
   background-size: cover;
+  background-attachment: fixed;
 }
 code{
   font-family: Roboto,source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;}
@@ -26,6 +27,7 @@ input[type=number] {
   body{
     background-size:cover;
     background-repeat: no-repeat;
-    background: url("./images/bgimg3sm.jpg");  
+    background: url("./images/bgimg3sm.jpg"); 
+    background-attachment: fixed; 
   }
 }

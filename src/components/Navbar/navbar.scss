@@ -5,6 +5,10 @@ $textcolor: rgb(14, 14, 14);
   background: rgb(39, 39, 52);
   border-bottom: 1px solid white;
   height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 1;
 }
 
 .navcontainer {
@@ -190,5 +194,45 @@ $textcolor: rgb(14, 14, 14);
   @media (min-width: 1550px) and (max-width:1600px) {
     #ul{
       margin-left:59%
+    }
+  }
+  @media (min-width: 1600px) and (max-width:1650px) {
+    #ul{
+      margin-left:60%
+    }
+  }
+  @media (min-width: 1650px) and (max-width:1700px) {
+    #ul{
+      margin-left:61%
+    }
+  }
+  @media (min-width: 1700px) and (max-width:1750px) {
+    #ul{
+      margin-left:63%
+    }
+  }
+  @media (min-width: 1750px) and (max-width:1800px) {
+    #ul{
+      margin-left:64%
+    }
+  }
+  @media (min-width: 1800px) and (max-width:1850px) {
+    #ul{
+      margin-left:65%
+    }
+  }
+  @media (min-width: 1850px) and (max-width:1900px) {
+    #ul{
+      margin-left:66%
+    }
+  }
+  @media (min-width: 1900px) and (max-width:1950px) {
+    #ul{
+      margin-left:66%
+    }
+  }
+  @media (min-width: 2000px) and (max-width:2250px) {
+    #ul{
+      margin-left:66%
     }
   }
