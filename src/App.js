@@ -8,6 +8,12 @@ import Warehouse from './components/Warehouse/Warehouse'
 import Vehicle from './components/vehicle/vehicle';
 import PrivatRoute from './components/PrivateRoute/PrivateRoute';
 
+import InsertGuard from './components/Guards/GuardsMaster/InsertGuard';
+import TotalGuards from './components/Guards/GuardsMaster/TotalGuard'
+import GuardsLogs from './components/Guards/GuardsLogs/guardslogs'
+import GuardsLogOut from './components/Guards/GuardsLogs/Guardslogoutlogs';
+
+
 import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
 function App() {
   return (
@@ -21,6 +27,11 @@ function App() {
          <PrivatRoute exact path="/VisitorLogBook" component={Visitor}/>
          <PrivatRoute exact path="/Warehouse" component={Warehouse}/>
          <PrivatRoute exact path="/Vehicle" component={Vehicle}/>
+
+         <Route expact path="/InsertGuard" component={InsertGuard}/>
+      <Route expact path="/TotalGuards" component={TotalGuards}/>
+      <Route expact path="/guardslogs" component={GuardsLogs}/>
+      <Route expact path="/guardslogout" component={GuardsLogOut}/>
      </Switch>
      </Router>
 
