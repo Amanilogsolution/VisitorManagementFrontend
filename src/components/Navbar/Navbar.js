@@ -24,7 +24,7 @@ function Navbar({ openSidebar }) {
                 <button className="navbar-toggler" type="button" data-target="#nav1" data-toggle="collapse" onClick={openSidebar}>
                     <span className="navbar-toggler-icon"/>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="d-flex justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="ul" className="navbar-nav navlinks ms-auto mb-2 mb-lg-0 ">
                         <li id="li" className="nav-item navlink" >
                             <a className="nav-link" href="Dashboard">Home <span className="sr-only">(current)</span></a>
@@ -43,6 +43,16 @@ function Navbar({ openSidebar }) {
                                 <a className="dropdown-item text-dark" href="/GeneratorLogBook"><a id="i" >Generator LogBook</a></a>
                                 <a className="dropdown-item text-dark" href="/DieselLog"><a id="i">Diesel LogBook</a></a>
                                 <a className="dropdown-item text-dark" href="Warehouse"><a id="i">Open/Close Warehouse LogBook</a></a>
+                            </div>
+                        </li>
+                         <li id="li" className="nav-item dropdown navlink">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Guard
+                            </a>
+                            <div id="navdrop" className="dropdown-menu ml-5 " aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item text-dark" href="/TotalGuards"><a id="i" >Show Guards</a></a>
+                                <a className="dropdown-item text-dark" href="/guardslogs"><a id="i">Guard Login</a></a>
+                                <a className="dropdown-item text-dark" href="/guardslogout"><a id="i"> Guard Logout</a></a>
                             </div>
                         </li>
                         <li>
