@@ -109,7 +109,9 @@ const DieselLog = () => {
 
                         </div>
 
-                    </div></div></div>
+                    </div>
+                    </div>
+                </div>
             {/* </div> */}
         </>
     )
