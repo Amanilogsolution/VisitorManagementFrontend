@@ -11,7 +11,8 @@ const InsertGuard = () => {
     const [location, setLocation] = useState([])
     const [number, setNumber] = useState()
     const [shift, setShift] = useState()
-    const [vendor, setVendor] = useState([])
+    const [vendorlist, setVendorlist] = useState([])
+    const [vendor,setVendor] = useState()
 
     useEffect(async () => {
         const result = await ActiveLocation()
@@ -20,7 +21,7 @@ const InsertGuard = () => {
 
         const Vendor = await TotalVendor()
         console.log(Vendor)
-        setVendor(Vendor)
+        setVendorlist(Vendor)
 
         var myDate = new Date();
         var day = myDate.getDate();
@@ -42,9 +43,13 @@ const InsertGuard = () => {
         setShift(data)
         console.log(data)
     }
-    let options = vendor.map((ele) => {
+    let options = vendorlist.map((ele) => {
         return { value: ele.Tid, label: ele.Tname };
     })
+    const handleCustvendval = (e)=>{
+        setVendor(e)
+
+    }
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -55,14 +60,16 @@ const InsertGuard = () => {
         const Guardname = document.getElementById('guardname').value
         const Guardid = 'Guard' + Location + Math.floor(1000 + Math.random() * 9000)
         const Phoneno = document.getElementById('phoneno').value
-        const vendorid = document.getElementById('vendid').value
-        const vendorname = document.getElementById('vendname').value
+        const vendorid = vendor.value
+        const vendorname = vendor.label
         const Guardjoiningdate = document.getElementById('guardjoindate').value
         const dateofbirth = document.getElementById('dateofbirth').value
+        console.log(vendorid,vendorname)
 
         console.log(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate, LocationName, dateofbirth, shift)
 
         const result = await insertguard(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate, LocationName, dateofbirth, shift)
+        console.log(result)
         if (result == 'Added') {
             alert('Guard Added')
             window.location.href = '/TotalGuards'
@@ -94,19 +101,20 @@ const InsertGuard = () => {
                                     <div className=' row ' style={{ marginBottom: "6px" }} >
 
                                         <div className="form-group col-md-6" style={{ marginBottom: "-1px" }}>
-                                            <label htmlFor="Invoice_Amount">Vendor ID <span style={{ color: "red" }}>*</span></label>
+                                            <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
                                             {/* <input className="form-control" type="text" id="vendid"/> */}
-                                            <Select                                                                              
-                                              className="col-md"
+                                            <Select     
+                                            id="vendid"                                                                         
+                                              className="col"
                                                 options={options}
                                                 isMulti={false}
-                                            // onChange={handleCustvendval}
+                                            onChange={handleCustvendval}
                                             />
                                         </div>
-                                        <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
+                                        {/* <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
                                             <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
                                             <input className="form-control" type="text" id="vendname" />
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     <div className="mb-1">

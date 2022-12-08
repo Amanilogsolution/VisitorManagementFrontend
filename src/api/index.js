@@ -105,7 +105,7 @@ export const DashboardGeneratorTotalUnitMonth = async (startdate,enddate,warehou
 
 export const insertguard = async (location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift) => {
     console.log('API',location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName)
-    const url = `https://vmbackend.awlinternational.com/api/insertguard`
+    const url = `http://localhost:8004/api/insertguard`
     return axios.post(url,{location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift}).then(response => response.data).catch(error => console.log(error));
 }
 
