@@ -105,41 +105,46 @@ export const DashboardGeneratorTotalUnitMonth = async (startdate,enddate,warehou
 
 export const insertguard = async (location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift) => {
     console.log('API',location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName)
-    const url = `https://vendorportalbackend.awlworldwide.com/api/insertguard`
+    const url = `http://localhost:8004/api/insertguard`
     return axios.post(url,{location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const TotalGuard = async () => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/totalguard`
+    const url = `http://localhost:8004/api/totalguard`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const DeactiveGuards = async (sno,status) => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/deactiveguards`
+    const url = `http://localhost:8004/api/deactiveguards`
     return axios.post(url,{sno,status}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const InsertGuardLogin = async (Location,Guardname,date,time,status,guardid,userid,locationname) => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/insertGuardLogin`
+    const url = `http://localhost:8004/api/insertGuardLogin`
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid,locationname}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const GetguardmasterLogout = async () => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/getguardmasterlogout`
+    const url = `http://localhost:8004/api/getguardmasterlogout`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const GetguardmasterLogin = async () => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/getguardmasterlogin`
+    const url = `http://localhost:8004/api/getguardmasterlogin`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const UpdateGuard = async (Location,Guardname,date,time,status,guardid,userid) => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/updateguard`
+    const url = `http://localhost:8004/api/updateguard`
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid}).then(response => response.data).catch(error => console.log(error));
 }
 export const ActiveLocation = async () => {
-    const url = `https://vendorportalbackend.awlworldwide.com/api/activelocation`
+    const url = `http://localhost:8004/api/activelocation`
+    return axios.post(url).then(response => response.data).catch(error => console.log(error));
+}
+
+export const TotalVendor = async () => {
+    const url = `http://localhost:8004/api/TotalVendor`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 

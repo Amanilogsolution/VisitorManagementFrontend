@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import NavPage from '../../Navbar/NavBar';
 // import Homefooter from '../../footer/footer';
-import { insertguard, ActiveLocation } from '../../../api/index'
+import { insertguard, ActiveLocation ,TotalVendor } from '../../../api/index'
 import Home from '../../Home'
 
 
@@ -14,6 +14,9 @@ const InsertGuard = () => {
     useEffect(async () => {
         const result = await ActiveLocation()
         setLocation(result)
+
+        const Vendor = await TotalVendor()
+        console.log(Vendor)
 
         var myDate = new Date();
         var day = myDate.getDate();
