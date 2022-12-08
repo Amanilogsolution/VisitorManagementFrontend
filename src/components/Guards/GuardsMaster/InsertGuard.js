@@ -8,6 +8,18 @@ import Select from 'react-select';
 
 
 const InsertGuard = () => {
+    const colourStyles = {
+        control: styles => ({ ...styles, backgroundColor: 'none',border:"none",borderBottom:"3px solid rgb(92,91,92)" }),
+        option: (styles) => {
+          return {
+            ...styles,
+            backgroundColor:'rgb(39,39,52)',
+            color: '#FFF',
+            cursor:'default',
+          };
+        },
+    }
+    
     const [location, setLocation] = useState([])
     const [number, setNumber] = useState()
     const [shift, setShift] = useState()
@@ -100,6 +112,7 @@ const InsertGuard = () => {
                                               className="col-md"
                                                 options={options}
                                                 isMulti={false}
+                                                styles={colourStyles}
                                             // onChange={handleCustvendval}
                                             />
                                         </div>
