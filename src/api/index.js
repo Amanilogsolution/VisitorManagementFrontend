@@ -143,6 +143,8 @@ export const ActiveLocation = async () => {
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
+// Location
+
 export const TotalVendor = async () => {
     const url = `http://localhost:8004/api/TotalVendor`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));

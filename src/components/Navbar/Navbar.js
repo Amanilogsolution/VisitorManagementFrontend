@@ -79,8 +79,6 @@ function Navbar({ openSidebar }) {
             </nav>
 
 
-
-
         </>
     )
 }
