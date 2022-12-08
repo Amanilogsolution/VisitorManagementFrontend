@@ -193,7 +193,7 @@ const GuardsLogs = () => {
 
         <div className="container mt-5 ">
           <div className="d-flex justify-content-between h-25">
-          <h2 className="text-dark mt-4">Guards Login</h2>
+          <h2 className="text-dark mt-5">Guards Login</h2>
           </div>
           <div className="DataTable">
             <DataTableExtensions {...tableData} >

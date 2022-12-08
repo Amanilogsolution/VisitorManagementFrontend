@@ -71,11 +71,14 @@ const InsertGuard = () => {
         <div className="Total_Glogs">
         <Home />
 
-            <div className="row d-flex justify-content-center align-items-center" style={{width:"100%"}}>
+            <div className="row d-flex justify-content-center align-items-center mt-5" style={{width:"100%"}}>
                 <div className="col col-md-6">
-                    {/* <h2>Add Guard</h2> */}
-                    <h2 className='text-center mt-5'>Add Guard</h2>
-                    <div className="card p-3 my-3 mb-5">
+                
+                    <div className="card mt-5">
+                    <header className="card-header" >
+                                <h4 className="card-title mt-1">Add Guard</h4>
+                            </header>
+                            <div className='card-body'>
                         <form>
 
                             <div className=' row ' style={{marginBottom:"6px"}} >
@@ -94,7 +97,7 @@ const InsertGuard = () => {
                                 <div className="form-group" style={{marginBottom:"5px"}}>
                                     <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
                                     <div className="mb-3">
-                                        <select className="form-select w-100 p-2" id="location">
+                                        <select style={{border:"none",borderBottom:"3px solid #5c5b5c",background:"none",borderRadius:"5px"}} className="form-select w-100 p-2" id="location">
                                             <option selected value="" hidden>Select Location</option>
                                             {
                                                 location.map(items => (
@@ -124,7 +127,7 @@ const InsertGuard = () => {
                                 </div> */}
 
 
-                                <div className='row' style={{paddingBottom:"-2px"}}>
+                                <div className='row mt-1'>
 
                                     <div className="form-group col-md-6">
                                         <label htmlFor="Invoice_Amount">Date Of Birth <span style={{ color: "red", }}>*</span></label>
@@ -136,11 +139,11 @@ const InsertGuard = () => {
                                         <input className="form-control" type="date" id="guardjoindate" />
                                     </div>
                                 </div>
-                                <div className="mb-3"onChange={handleChangestatus} >
-                                    {/* <div className="form-label"> */}
+                                <div className="mb-3 d-flex"onChange={handleChangestatus} >
+
                                     <label
                                         htmlFor="user_name"
-                                        className="col-md-2 col-form-label font-weight-normal"
+                                        className="col-md-4 col-form-label font-weight-normal d-flex"
                                     >
                                         Select Shift <span style={{ color: "red" }}>*</span>
                                     </label>
@@ -162,25 +165,25 @@ const InsertGuard = () => {
                                         />Night
 
                                     </label>
-                                    {/* </div> */}
                                 </div>
 
 
 
 
                                 <div className='my-3'>
-                                    <button type='reset' id="link_supp" className="btn" value='reset'>Reset </button>
+                                    <button type='reset' id="link_supp" className="btn btn-dark" value='reset'>Reset </button>
                                     <button style={{ marginLeft: '20px' }} className="btn btn-secondary" onClick={(e) => {
                                         e.preventDefault()
                                         window.location.href = '/TotalGuards'
                                     }}>
                                         Cancel
                                     </button>
-                                    <button id="add_btn" type="submit" style={{ marginLeft: '20px' }} className="btn" onClick={handleClick}>Save</button>
+                                    <button id="add_btn" type="submit" style={{ marginLeft: '20px' }} className="btn btn-primary" onClick={handleClick}>Save</button>
                                 </div>
 
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -17,21 +17,21 @@ const customStyles = {
   },
   rows: {
     style: {
-      minHeight: '55px'
+      minHeight: '35px'
     }
   },
   headCells: {
     style: {
       fontSize: '15px',
       fontWeight: '500',
-      background:'rgb(253, 76, 27)',
+      background:'rgb(15, 15, 36)',
       color:'white',
     },
   },
   cells: {
     style: {
       fontSize: '15px',
-      background:'rgb(239, 225, 225)	',
+      background:'rgb(237, 237, 237)',
       borderBottom:"1px solid silver",
     },
   },
@@ -74,7 +74,7 @@ const GuardsLogOut = () => {
       selector: "null",
       cell: (row) => [
         <div className='droplist'>
-          <input style={{width:"100%",background:"rgb(199, 171, 171)",borderRadius:"2px",border:"none"}} id={`date${row.ID}`} type="date" />
+          <input style={{width:"100%",background:"rgb(176, 176, 176)",borderRadius:"2px",border:"none"}} id={`date${row.ID}`} type="date" />
         </div>
       ]
     },
@@ -84,7 +84,7 @@ const GuardsLogOut = () => {
       selector: "null",
       cell: (row) => [
         <div className='droplist'>
-          <input style={{width:"100%",background:"rgb(199, 171, 171)",borderRadius:"2px",border:"none"}} type="time" id={`time${row.ID}`} onChange={() => setSno(row.ID)} />
+          <input style={{width:"100%",background:"rgb(176, 176, 176)",borderRadius:"2px",border:"none"}} type="time" id={`time${row.ID}`} onChange={() => setSno(row.ID)} />
         </div>
       ]
     },
@@ -181,10 +181,9 @@ const GuardsLogOut = () => {
 
 
 
-        <div className="container">
+        <div className="container mt-5 pt-3">
 
-          {/* <h1>Guards LogOut</h1> */}
-          <h2 className="mt-5">Guards Logout</h2>
+          <h2 className="mt-5 d-flex ">Guards Logout</h2>
 
           <div className="DataTable">
             <DataTableExtensions {...tableData} >
