@@ -136,3 +136,8 @@ $textcolor: rgb(14, 14, 14);
 .navbar-light .navbar-toggler{
   border:2px solid white
 }
+@media only screen and (min-width: 0px) and (max-width: 992px) {
+  #ul{
+    display: none;
+  }
+}
