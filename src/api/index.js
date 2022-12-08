@@ -62,42 +62,42 @@ export const UploadData = async (data) => {
 }
 
 export const DashboardWarehouseStatus = async (date,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardwarehousestatus`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardwarehousestatus`
     return axios.post(url, {date,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardVisitorStatus = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardvisitorstatus`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardvisitorstatus`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardVehicleInStatus = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardvehicleinstatus`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardvehicleinstatus`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardVehicleOutStatus = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardvehicleoutstatus`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardvehicleoutstatus`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardDieselLitreMonth = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboarddiesellitremonth`
+    const url = `https://vmbackend.awlinternational.com/api/dashboarddiesellitremonth`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardDieselAmountMonth = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboarddieselamountmonth`
+    const url = `https://vmbackend.awlinternational.com/api/dashboarddieselamountmonth`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardGeneratorInstanceMonth = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardgeneratorinstancemonth`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardgeneratorinstancemonth`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardGeneratorTotalUnitMonth = async (startdate,enddate,warehouseid) => {
-    const url = `http://localhost:8004/api/dashboardgeneratortotalunitmonth`
+    const url = `https://vmbackend.awlinternational.com/api/dashboardgeneratortotalunitmonth`
     return axios.post(url, {startdate,enddate,warehouseid}).then(res => res.data).catch(err => console.log(err))
 }
 
@@ -105,48 +105,48 @@ export const DashboardGeneratorTotalUnitMonth = async (startdate,enddate,warehou
 
 export const insertguard = async (location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift) => {
     console.log('API',location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName)
-    const url = `http://localhost:8004/api/insertguard`
+    const url = `https://vmbackend.awlinternational.com/api/insertguard`
     return axios.post(url,{location,Guardname,Guardid,Phoneno,vendorid,vendorname,Guardjoiningdate,LocationName,DateOfBirth,Shift}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const TotalGuard = async () => {
-    const url = `http://localhost:8004/api/totalguard`
+    const url = `https://vmbackend.awlinternational.com/api/totalguard`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const DeactiveGuards = async (sno,status) => {
-    const url = `http://localhost:8004/api/deactiveguards`
+    const url = `https://vmbackend.awlinternational.com/api/deactiveguards`
     return axios.post(url,{sno,status}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const InsertGuardLogin = async (Location,Guardname,date,time,status,guardid,userid,locationname) => {
-    const url = `http://localhost:8004/api/insertGuardLogin`
+    const url = `https://vmbackend.awlinternational.com/api/insertGuardLogin`
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid,locationname}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const GetguardmasterLogout = async () => {
-    const url = `http://localhost:8004/api/getguardmasterlogout`
+    const url = `https://vmbackend.awlinternational.com/api/getguardmasterlogout`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const GetguardmasterLogin = async () => {
-    const url = `http://localhost:8004/api/getguardmasterlogin`
+    const url = `https://vmbackend.awlinternational.com/api/getguardmasterlogin`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 export const UpdateGuard = async (Location,Guardname,date,time,status,guardid,userid) => {
-    const url = `http://localhost:8004/api/updateguard`
+    const url = `https://vmbackend.awlinternational.com/api/updateguard`
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid}).then(response => response.data).catch(error => console.log(error));
 }
 export const ActiveLocation = async () => {
-    const url = `http://localhost:8004/api/activelocation`
+    const url = `https://vmbackend.awlinternational.com/api/activelocation`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
 // Location
 
 export const TotalVendor = async () => {
-    const url = `http://localhost:8004/api/TotalVendor`
+    const url = `https://vmbackend.awlinternational.com/api/TotalVendor`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
