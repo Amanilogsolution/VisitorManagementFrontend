@@ -9,7 +9,7 @@ import Select from 'react-select';
 
 const InsertGuard = () => {
     const colourStyles = {
-        control: styles => ({ ...styles, backgroundColor: 'none',border:"none",borderBottom:"3px solid rgb(92,91,92)" }),
+        control: styles => ({ ...styles,width:'100%', backgroundColor: 'none',border:"none",borderBottom:"3px solid rgb(92,91,92)" }),
         option: (styles) => {
           return {
             ...styles,
@@ -117,21 +117,31 @@ const InsertGuard = () => {
                                             {/* <input className="form-control" type="text" id="vendid"/> */}
                                             <Select     
                                             id="vendid"                                                                         
-                                              className="col"
+                                              className="mb-3"
                                                 options={options}
                                                 isMulti={false}
                                                 styles={colourStyles}
                                             onChange={handleCustvendval}
                                             />
                                         </div>
-                                        {/* <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
-                                            <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
-                                            <input className="form-control" type="text" id="vendname" />
-                                        </div> */}
+                                        <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
+                                            <label htmlFor="Invoice_Amount">Location <span style={{ color: "red" }}>*</span></label>
+                                            {/* <input className="form-control" type="text" id="vendname" /> */}
+                                            <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
+                                                    <option selected value="" hidden>Select Location</option>
+                                                    {
+                                                        location.map(items => (
+                                                            <option value={items.WHid} >{items.WHname}</option>
+
+                                                        ))
+                                                    }
+                                                    {/* <option value="Other">Other</option> */}
+                                                </select>
+                                        </div>
                                     </div>
 
                                     <div className="mb-1">
-                                        <div className="form-group" style={{ marginBottom: "5px" }}>
+                                        {/* <div className="form-group" style={{ marginBottom: "5px" }}>
                                             <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
                                             <div className="mb-3">
                                                 <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
@@ -142,10 +152,9 @@ const InsertGuard = () => {
 
                                                         ))
                                                     }
-                                                    {/* <option value="Other">Other</option> */}
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className='row' style={{ marginBottom: "0px" }}>
 
                                             <div className="form-group col-md-6" style={{ marginBottom: "0px" }}>
