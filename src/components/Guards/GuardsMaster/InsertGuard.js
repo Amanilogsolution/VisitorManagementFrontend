@@ -121,7 +121,7 @@ const InsertGuard = () => {
                                                 options={options}
                                                 isMulti={false}
                                                 styles={colourStyles}
-                                            // onChange={handleCustvendval}
+                                            onChange={handleCustvendval}
                                             />
                                         </div>
                                         {/* <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
