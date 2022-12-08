@@ -5,6 +5,10 @@ $textcolor: rgb(14, 14, 14);
   background: rgb(39, 39, 52);
   border-bottom: 1px solid white;
   height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 1;
 }
 
 .navcontainer {
@@ -132,14 +136,3 @@ $textcolor: rgb(14, 14, 14);
 .navbar-light .navbar-toggler{
   border:2px solid white
 }
-  #li {
-    margin: 0 -22px 0 30px;
-  }
-
-
-   @media (min-width: 0px) and (max-width:991px) {
-    #ul{
-      border: 2px solid red;
-      display: none;
-    }
-  }

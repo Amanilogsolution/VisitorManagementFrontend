@@ -17,22 +17,22 @@ const customStyles = {
   },
   rows: {
     style: {
-      minHeight: '55px'
+      minHeight: '35px'
     }
   },
   headCells: {
     style: {
       fontSize: '15px',
       fontWeight: '500',
-      background:'rgb(253, 76, 27)',
-      color:'white',
+      background: 'rgb(15, 15, 36)',
+      color: 'white',
     },
   },
   cells: {
     style: {
       fontSize: '15px',
-      background:'rgb(239, 225, 225)	',
-      borderBottom:"1px solid silver",
+      background: 'rgb(237, 237, 237)	',
+      borderBottom: "1px solid silver",
     },
   },
 };
@@ -77,7 +77,7 @@ const columns = [
     selector: 'null',
     cell: (row) => [
       <div className='droplist'>
-        <select style={{width:"100%",background:"rgb(199, 171, 171)",borderRadius:"2px",border:"none",color:"black"}} onChange={async (e) => {
+        <select style={{ width: "100%", background: "rgb(86, 86, 92)", borderRadius: "2px", border: "none", color: "white" }} onChange={async (e) => {
           const status = e.target.value;
           await DeactiveGuards(row.ID, status)
           window.location.href = 'TotalGuards'
@@ -98,10 +98,6 @@ const columns = [
 const TotalGuards = () => {
   const [data, setData] = useState([]);
 
-
-
-
-
   useEffect(() => {
     const totalposts = async () => {
       const result = await TotalGuard()
@@ -119,17 +115,13 @@ const TotalGuards = () => {
   return (
     <>
       <div className="Total_Glogs">
-      <Home />
-
-
-        {/* <NavPage /> */}
-        <div className="container">
-
-          {/* <h1>A</h1> */}
-          <h2 className="text-dark mt-5">TotalGuards</h2>
-
-          <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./InsertGuard" }} class="btn btn-secondary">Add Guard</button>
-
+        <Home />
+      
+        <div className="container mt-5">
+          <div className="d-flex justify-content-between h-25">
+            <h2 className="text-dark mt-5">TotalGuards</h2>
+            <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./InsertGuard" }} class="btn btn-dark h-25 mt-5">Add Guard</button>
+          </div>
           <div className="DataTable">
             <DataTableExtensions {...tableData} >
               <Datatable

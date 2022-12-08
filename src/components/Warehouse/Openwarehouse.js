@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Warehouseopen, warehouseLastclose,UploadData } from '../../api/index'
 import { MdLibraryBooks } from 'react-icons/md';
+import Footer from '../footer/Footer';
 
 
 function Openwarehouse() {
@@ -92,7 +93,7 @@ function Openwarehouse() {
         <>
             <div className="openwarehousecontainer">
                 <div>
-                    <div className="col-md-6 mt-4" style={{ margin: "auto" }}>
+                    <div className="col-md-6" style={{ margin: "100px auto" }}>
                         <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Closed on {last_date}</span></h2>
                         <div className="card">
                             <header className="card-header">
@@ -169,6 +170,7 @@ function Openwarehouse() {
           </div>
         </div>
             </div>
+            <Footer/>
         </>
     )
 }

@@ -3,6 +3,7 @@ import './Visitor.css'
 import Home from '../Home';
 import { VisiterEntry, Allemployee,Sms,EmployeeAlerts } from '../../api/index'
 import { ImEnter } from 'react-icons/im';
+import Footer from '../footer/Footer';
 function Visitor() {
     const [selectdata, setSelectdata] = useState([]);
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -80,7 +81,7 @@ function Visitor() {
             <div className="generatorlogcontainer">
                 <Home />
                 <div>
-                    <div className="col-md-6 mt-5" style={{ margin: "auto" }} id="main-visitor">
+                    <div className="col-md-6" style={{ margin: "100px auto" }} id="main-visitor">
                         <div className="card" >
                             <header className="card-header" >
                                 <h4 className="card-title mt-1">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
@@ -161,6 +162,7 @@ function Visitor() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

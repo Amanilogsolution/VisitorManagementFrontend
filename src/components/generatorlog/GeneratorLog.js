@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import Home from '../Home';
 import { GeneratorEntry } from '../../api/index'
 import { MdLibraryBooks } from 'react-icons/md';
+import Footer from '../footer/Footer';
 
 function GeneratorLog() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -35,7 +36,7 @@ function GeneratorLog() {
 
                 <div>
                     {/* <div className="row justify-content-center mt-2 mb-5" style={{ width: "100%" }}> */}
-                    <div className="col-md-6 mt-5" style={{ margin: "auto" }} >
+                    <div className="col-md-6" style={{ margin: "100px auto" }} >
                         <div className="card" >
                             <header className="card-header" >
                                 <h4 className="card-title mt-1">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
@@ -100,6 +101,7 @@ function GeneratorLog() {
                 </div></div>
             {/* </div> */}
             {/* </div> */}
+            <Footer/>
         </>
     )
 }
