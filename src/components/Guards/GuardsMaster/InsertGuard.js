@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
 // import NavPage from '../../Navbar/NavBar';
 // import Homefooter from '../../footer/footer';
-import { insertguard, ActiveLocation ,TotalVendor } from '../../../api/index'
+import { insertguard, ActiveLocation, TotalVendor } from '../../../api/index'
 import Home from '../../Home'
+import Select from 'react-select';
 
 
 
 const InsertGuard = () => {
     const [location, setLocation] = useState([])
     const [number, setNumber] = useState()
-    const [shift,setShift] = useState()
+    const [shift, setShift] = useState()
+    const [vendor, setVendor] = useState([])
 
     useEffect(async () => {
         const result = await ActiveLocation()
         setLocation(result)
 
+
         const Vendor = await TotalVendor()
         console.log(Vendor)
+        setVendor(Vendor)
 
         var myDate = new Date();
         var day = myDate.getDate();
@@ -37,7 +41,10 @@ const InsertGuard = () => {
         let data = e.target.value
         setShift(data)
         console.log(data)
-      }
+    }
+    let options = vendor.map((ele) => {
+        return { value: ele.Tid, label: ele.Tname };
+    })
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -53,9 +60,9 @@ const InsertGuard = () => {
         const Guardjoiningdate = document.getElementById('guardjoindate').value
         const dateofbirth = document.getElementById('dateofbirth').value
 
-        console.log(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate,LocationName,dateofbirth,shift)
+        console.log(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate, LocationName, dateofbirth, shift)
 
-        const result = await insertguard(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate,LocationName,dateofbirth,shift)
+        const result = await insertguard(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate, LocationName, dateofbirth, shift)
         if (result == 'Added') {
             alert('Guard Added')
             window.location.href = '/TotalGuards'
@@ -70,130 +77,136 @@ const InsertGuard = () => {
 
     return (
         <>
-        {/* <NavPage /> */}
-        <div className="Total_Glogs">
-        <Home />
+            {/* <NavPage /> */}
+            <div className="Total_Glogs">
+                <Home />
 
-            <div className="row d-flex justify-content-center align-items-center mt-5" style={{width:"100%"}}>
-                <div className="col col-md-6">
-                
-                    <div className="card mt-5">
-                    <header className="card-header" >
+                <div className="row d-flex justify-content-center align-items-center mt-5" style={{ width: "100%" }}>
+                    <div className="col col-md-6">
+
+                        <div className="card mt-5">
+                            <header className="card-header" >
                                 <h4 className="card-title mt-1">Add Guard</h4>
                             </header>
                             <div className='card-body'>
-                        <form>
+                                <form>
 
-                            <div className=' row ' style={{marginBottom:"6px"}} >
+                                    <div className=' row ' style={{ marginBottom: "6px" }} >
 
-                                <div className="form-group col-md-6"  style={{marginBottom:"-1px"}}>
-                                    <label htmlFor="Invoice_Amount">Vendor ID <span style={{ color: "red" }}>*</span></label>
-                                    <input className="form-control" type="text" id="vendid"/>
-                                </div>
-                                <div className="form-group col-md-6" style={{marginBottom:"-1px"}} >
-                                    <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
-                                    <input className="form-control" type="text" id="vendname"/>
-                                </div>
-                            </div>
-
-                            <div className="mb-1">
-                                <div className="form-group" style={{marginBottom:"5px"}}>
-                                    <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
-                                    <div className="mb-3">
-                                        <select style={{border:"none",borderBottom:"3px solid #5c5b5c",background:"none",borderRadius:"5px"}} className="form-select w-100 p-2" id="location">
-                                            <option selected value="" hidden>Select Location</option>
-                                            {
-                                                location.map(items => (
-                                                    <option value={items.WHid} >{items.WHname}</option>
-
-                                                ))
-                                            }
-                                            {/* <option value="Other">Other</option> */}
-                                        </select>
+                                        <div className="form-group col-md-6" style={{ marginBottom: "-1px" }}>
+                                            <label htmlFor="Invoice_Amount">Vendor ID <span style={{ color: "red" }}>*</span></label>
+                                            {/* <input className="form-control" type="text" id="vendid"/> */}
+                                            <Select                                                                              
+                                              className="col-md"
+                                                options={options}
+                                                isMulti={false}
+                                            // onChange={handleCustvendval}
+                                            />
+                                        </div>
+                                        <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
+                                            <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
+                                            <input className="form-control" type="text" id="vendname" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='row' style={{marginBottom:"0px"}}>
 
-                                    <div className="form-group col-md-6" style={{marginBottom:"0px"}}>
-                                        <label htmlFor="Invoice_Amount">Guard Name <span style={{ color: "red" }}>*</span></label>
-                                        <input className="form-control" type="text" id="guardname" />
-                                    </div>
-                                    <div className="form-group col-md-6" style={{marginBottom:"0px"}}>
-                                        <label htmlFor="Invoice_Amount">Phone No <span style={{ color: "red" }}>*</span></label>
-                                        <input className="form-control" type="number" id="phoneno" onChange={handleChange} value={number} />
-                                    </div>
-                                </div>
+                                    <div className="mb-1">
+                                        <div className="form-group" style={{ marginBottom: "5px" }}>
+                                            <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
+                                            <div className="mb-3">
+                                                <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
+                                                    <option selected value="" hidden>Select Location</option>
+                                                    {
+                                                        location.map(items => (
+                                                            <option value={items.WHid} >{items.WHname}</option>
 
-                                {/* <div className="mb-3">
+                                                        ))
+                                                    }
+                                                    {/* <option value="Other">Other</option> */}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className='row' style={{ marginBottom: "0px" }}>
+
+                                            <div className="form-group col-md-6" style={{ marginBottom: "0px" }}>
+                                                <label htmlFor="Invoice_Amount">Guard Name <span style={{ color: "red" }}>*</span></label>
+                                                <input className="form-control" type="text" id="guardname" />
+                                            </div>
+                                            <div className="form-group col-md-6" style={{ marginBottom: "0px" }}>
+                                                <label htmlFor="Invoice_Amount">Phone No <span style={{ color: "red" }}>*</span></label>
+                                                <input className="form-control" type="number" id="phoneno" onChange={handleChange} value={number} />
+                                            </div>
+                                        </div>
+
+                                        {/* <div className="mb-3">
                                     <label htmlFor="Invoice_Amount" className="form-label">Vendor ID <span style={{ color: "red" }}>*</span></label>
                                     <input className="form-control" type="text" id="vendid" disabled value={localStorage.getItem('inputname')} />
                                 </div> */}
 
 
-                                <div className='row mt-1'>
+                                        <div className='row mt-1'>
 
-                                    <div className="form-group col-md-6">
-                                        <label htmlFor="Invoice_Amount">Date Of Birth <span style={{ color: "red", }}>*</span></label>
-                                        <input className="form-control" type="date" id="dateofbirth" />
+                                            <div className="form-group col-md-6">
+                                                <label htmlFor="Invoice_Amount">Date Of Birth <span style={{ color: "red", }}>*</span></label>
+                                                <input className="form-control" type="date" id="dateofbirth" />
+                                            </div>
+
+                                            <div className="form-group col-md-6">
+                                                <label htmlFor="Invoice_Amount">Guard Joining Date <span style={{ color: "red" }}>*</span></label>
+                                                <input className="form-control" type="date" id="guardjoindate" />
+                                            </div>
+                                        </div>
+                                        <div className="mb-3 d-flex" onChange={handleChangestatus} >
+
+                                            <label
+                                                htmlFor="user_name"
+                                                className="col-md-4 col-form-label font-weight-normal d-flex"
+                                            >
+                                                Select Shift <span style={{ color: "red" }}>*</span>
+                                            </label>
+
+                                            <label className="form-check form-check-inline ">
+                                                <input
+                                                    className="form-check-input" type="radio"
+                                                    name="taxpreference"
+                                                    value="Day"
+                                                />Day
+                                            </label>
+
+                                            <label className="form-check form-check-inline">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="taxpreference"
+                                                    value="Night"
+                                                />Night
+
+                                            </label>
+                                        </div>
+
+
+
+
+                                        <div className='my-3'>
+                                            <button type='reset' id="link_supp" className="btn btn-dark" value='reset'>Reset </button>
+                                            <button style={{ marginLeft: '20px' }} className="btn btn-secondary" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.location.href = '/TotalGuards'
+                                            }}>
+                                                Cancel
+                                            </button>
+                                            <button id="add_btn" type="submit" style={{ marginLeft: '20px' }} className="btn btn-primary" onClick={handleClick}>Save</button>
+                                        </div>
+
                                     </div>
-
-                                    <div className="form-group col-md-6">
-                                        <label htmlFor="Invoice_Amount">Guard Joining Date <span style={{ color: "red" }}>*</span></label>
-                                        <input className="form-control" type="date" id="guardjoindate" />
-                                    </div>
-                                </div>
-                                <div className="mb-3 d-flex"onChange={handleChangestatus} >
-
-                                    <label
-                                        htmlFor="user_name"
-                                        className="col-md-4 col-form-label font-weight-normal d-flex"
-                                    >
-                                        Select Shift <span style={{ color: "red" }}>*</span>
-                                    </label>
-
-                                    <label className="form-check form-check-inline ">
-                                        <input
-                                            className="form-check-input" type="radio"
-                                            name="taxpreference"
-                                            value="Day"
-                                        />Day
-                                    </label>
-
-                                    <label className="form-check form-check-inline">
-                                        <input
-                                            className="form-check-input"
-                                            type="radio"
-                                            name="taxpreference"
-                                            value="Night"
-                                        />Night
-
-                                    </label>
-                                </div>
-
-
-
-
-                                <div className='my-3'>
-                                    <button type='reset' id="link_supp" className="btn btn-dark" value='reset'>Reset </button>
-                                    <button style={{ marginLeft: '20px' }} className="btn btn-secondary" onClick={(e) => {
-                                        e.preventDefault()
-                                        window.location.href = '/TotalGuards'
-                                    }}>
-                                        Cancel
-                                    </button>
-                                    <button id="add_btn" type="submit" style={{ marginLeft: '20px' }} className="btn btn-primary" onClick={handleClick}>Save</button>
-                                </div>
-
+                                </form>
                             </div>
-                        </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            
 
-        </div>
-        {/* <Homefooter /> */}
+
+            </div>
+            {/* <Homefooter /> */}
         </>
     )
 }
