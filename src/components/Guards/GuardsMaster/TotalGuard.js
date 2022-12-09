@@ -120,7 +120,10 @@ const TotalGuards = () => {
         <div className="container mt-5">
           <div className="d-flex justify-content-between h-25">
             <h2 className="text-dark mt-5">TotalGuards</h2>
-            <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./InsertGuard" }} class="btn btn-dark h-25 mt-5">Add Guard</button>
+            <div className="d-flex ">
+            <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./InsertGuard" }} class="btn btn-dark h mt-5 ">Add Guard</button>
+            <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./guardshistory" }} class="btn btn text-primary h mt-5 ml-3">Guard History</button>
+            </div>
           </div>
           <div className="DataTable">
             <DataTableExtensions {...tableData} >

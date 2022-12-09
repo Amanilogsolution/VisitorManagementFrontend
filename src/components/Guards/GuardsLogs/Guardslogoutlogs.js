@@ -155,7 +155,8 @@ const GuardsLogOut = () => {
 
   useEffect(() => {
     const totalposts = async () => {
-      const result = await GetguardmasterLogin()
+      const warehouse_id = localStorage.getItem('warehouseId')
+      const result = await GetguardmasterLogin(warehouse_id)
       console.log(result)
       setData(result)
       for (var i = 0; i <= result.length - 1; i++) {

@@ -100,10 +100,10 @@ const InsertGuard = () => {
             <div className="Total_Glogs">
                 <Home />
 
-                <div className="row d-flex justify-content-center align-items-center mt-5" style={{ width: "100%" }}>
+                <div className="row d-flex justify-content-center align-items-center mt-5 pt-5" style={{ width: "100%" }}>
                     <div className="col col-md-6">
 
-                        <div className="card mt-5">
+                        <div className="card mt-5 ">
                             <header className="card-header" >
                                 <h4 className="card-title mt-1">Add Guard</h4>
                             </header>
@@ -126,7 +126,6 @@ const InsertGuard = () => {
                                         </div>
                                         <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
                                             <label htmlFor="Invoice_Amount">Location <span style={{ color: "red" }}>*</span></label>
-                                            {/* <input className="form-control" type="text" id="vendname" /> */}
                                             <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
                                                     <option selected value="" hidden>Select Location</option>
                                                     {
@@ -135,7 +134,6 @@ const InsertGuard = () => {
 
                                                         ))
                                                     }
-                                                    {/* <option value="Other">Other</option> */}
                                                 </select>
                                         </div>
                                     </div>

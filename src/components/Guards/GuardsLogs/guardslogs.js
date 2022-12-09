@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import NavPage from "../../Navbar/NavBar";
 import { GetguardmasterLogout, InsertGuardLogin } from '../../../api/index';
 import Datatable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
 import 'react-data-table-component-extensions/dist/index.css';
-// import './guardslogs.css'
 
-// import Homefooter from "../../footer/footer";
 import Home from '../../Home'
 
 
@@ -95,30 +92,10 @@ const GuardsLogs = () => {
       name: "Status",
       selector: "Guard_status",
       sortable: true,
-      // cell: (row) => [
-      //   <p id={`guardname${row.ID}`} >{row.Guardname}</p>
-      // ]
+  
     },
 
-    // {
-    //   name: 'Status',
-    //   sortable: true,
-    //   selector: 'null',
-    //   cell: (row) => [
-    //     <div className='droplist'>
-    //       <select id={`status${row.ID}`} onChange={async (e) => {
-    //         const status = e.target.value;
-    //       //   window.location.href = 'TotalGuards'
-    //       // alert(row.ID)
-    //       }
-    //       }>
-    //         <option value={row.Guard_status} hidden> {row.Guard_status}</option>
-    //         <option value='Login'>Login</option>
-    //         <option value='Logout' >Logout</option>
-    //       </select>
-    //     </div>
-    //   ]
-    // },
+  
 
     {
       name: "Action",
@@ -159,7 +136,8 @@ const GuardsLogs = () => {
 
   useEffect(() => {
     const totalposts = async () => {
-      const result = await GetguardmasterLogout()
+      const warehouse_id = localStorage.getItem('warehouseId')
+      const result = await GetguardmasterLogout(warehouse_id)
       console.log(result)
       setData(result)
 

@@ -24,7 +24,7 @@ function Login() {
             localStorage.setItem('userId', result.result)
             localStorage.setItem('userName', result.result2)
             localStorage.setItem('Warehouse', result.result3)
-            localStorage.setItem('warehouseId', result.result4)
+            localStorage.setItem('warehouseId', result.result4.trim())
             window.location.href = '/Dashboard';
         }
         else{

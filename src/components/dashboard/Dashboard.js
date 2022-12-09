@@ -75,8 +75,7 @@ const Dashboard = () => {
         const warehouselogs = await DashboardWarehouseStatus(Today, localStorage.getItem('warehouseId'))
         console.log(warehouselogs)
         if (warehouselogs.msg_flag == "open") {
-            setWarehouseStatus(' Warehouse Opened on '  + warehouselogs.Date + ' at ' + warehouselogs.openingat + 'AM')
-
+            setWarehouseStatus(' Warehouse Opened on ' + warehouselogs.Date + ' at ' + warehouselogs.openingat + 'AM')
         } else {
             setWarehouseStatus('Warehouse Closed on ' + warehouselogs.Date + ' at ' + warehouselogs.closegat + 'PM')
         }
@@ -89,12 +88,12 @@ const Dashboard = () => {
                 <Home />
                 {/* <h1>Welcome to AWL India</h1> */}
                 <div
-                   style={{width:"80%", marginLeft:"10%",marginRight:"10%"}}
+                    style={{ width: "80%", marginLeft: "10%", marginRight: "10%" }}
                 >
                     <div className="row mt-5 d-flex justify-content-center align-items-center" >
                         <div className="col-sm-3 mt-3 text-center p-1">
                             <div className="card "
-                            style={{height:"140px"}}
+                                style={{ height: "140px" }}
                             >
                                 <div className="card-body d-flex justify-content-center p-4">
                                     <h5 className="card-title">{warehouseStatus}</h5> &nbsp;
@@ -103,7 +102,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="col-sm-3 mt-3 p-2" >
-                            <div className="card" style={{height:"140px"}}>
+                            <div className="card" style={{ height: "140px" }}>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">Total Visitors (today) <span style={{ color: "red" }}>{visitorToday}</span></h5>
                                     {/* <br/> */}
@@ -144,7 +143,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="col-sm-5 mt-3 " >
-                            <div className="card" style={{ height: "186px"}}>
+                            <div className="card" style={{ height: "186px" }}>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">Total Litres Procured (this month) <span style={{ color: "red" }}>{dieselLitremonth}</span></h5>
                                     <h5 className="card-title">Total Amount <span style={{ color: "red" }}>{dieselAmountmonth}</span></h5>
@@ -155,8 +154,8 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            
-         {/* <Footer/> */}
+
+            {/* <Footer/> */}
         </>
     )
 }

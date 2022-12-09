@@ -4,10 +4,25 @@ import React, { useState } from 'react'
 import { TbLogout } from 'react-icons/tb';
 import { FaWarehouse } from 'react-icons/fa';
 import { AiFillCaretDown } from 'react-icons/ai';
+import { useEffect } from 'react';
 
 function Navbar({ openSidebar }) {
 
     const [card, setCard] = useState(false)
+
+    useEffect(()=>{
+        // alert(localStorage.getItem('warehouseId'))
+        const warehouse = localStorage.getItem('warehouseId')
+        console.log(warehouse =='CORP')
+        if(warehouse =='CORP'){
+            document.getElementById('toogleGuard').style.display="block"
+
+        }else{
+            document.getElementById('toogleGuard').style.display="none"
+ 
+        }
+
+    },[])
 
     const profileCard = () => {
         setCard(!card)
@@ -50,7 +65,7 @@ function Navbar({ openSidebar }) {
                         Guard
                             </a>
                             <div id="navdrop" className="dropdown-menu ml-5 " aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item text-dark" href="/TotalGuards"><a id="i" >Show Guards</a></a>
+                                <a id="toogleGuard" style={{display:"none"}} className="dropdown-item text-dark" href="/TotalGuards"><a id="i" >Show Guards</a></a>
                                 <a className="dropdown-item text-dark" href="/guardslogs"><a id="i">Guard Login</a></a>
                                 <a className="dropdown-item text-dark" href="/guardslogout"><a id="i"> Guard Logout</a></a>
                             </div>

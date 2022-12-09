@@ -124,14 +124,14 @@ export const InsertGuardLogin = async (Location,Guardname,date,time,status,guard
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid,locationname}).then(response => response.data).catch(error => console.log(error));
 }
 
-export const GetguardmasterLogout = async () => {
+export const GetguardmasterLogout = async (warehouse_id) => {
     const url = `https://vmbackend.awlinternational.com/api/getguardmasterlogout`
-    return axios.post(url).then(response => response.data).catch(error => console.log(error));
+    return axios.post(url,{warehouse_id}).then(response => response.data).catch(error => console.log(error));
 }
 
-export const GetguardmasterLogin = async () => {
+export const GetguardmasterLogin = async (warehouse_id) => {
     const url = `https://vmbackend.awlinternational.com/api/getguardmasterlogin`
-    return axios.post(url).then(response => response.data).catch(error => console.log(error));
+    return axios.post(url,{warehouse_id}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const UpdateGuard = async (Location,Guardname,date,time,status,guardid,userid) => {
@@ -148,6 +148,11 @@ export const ActiveLocation = async () => {
 export const TotalVendor = async () => {
     const url = `https://vmbackend.awlinternational.com/api/TotalVendor`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
+}
+
+export const TotalGuardsHistory = async (startDate,endDate) => {
+    const url = `https://vmbackend.awlinternational.com/api/totalguardshistory`
+    return axios.post(url,{startDate,endDate}).then(response => response.data).catch(error => console.log(error));
 }
 
 
