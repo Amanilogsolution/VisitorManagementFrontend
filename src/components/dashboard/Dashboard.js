@@ -97,7 +97,6 @@ const Dashboard = () => {
                             >
                                 <div className="card-body d-flex justify-content-center p-4">
                                     <h5 className="card-title">{warehouseStatus}</h5> &nbsp;
-                                    {/* <div className="dot" style={{height:"25px",width:"25px",backgroundColor:"green",borderRadius:"50%"}}></div> */}
                                 </div>
                             </div>
                         </div>
@@ -105,7 +104,6 @@ const Dashboard = () => {
                             <div className="card" style={{ height: "140px" }}>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">Total Visitors (today) <span style={{ color: "red" }}>{visitorToday}</span></h5>
-                                    {/* <br/> */}
                                     <h5 className="card-title">Total Visitors (this month) <span style={{ color: "red" }}>{visitorMonth}</span></h5>
 
                                 </div>
@@ -115,7 +113,6 @@ const Dashboard = () => {
                             <div className="card">
                                 <div className="card-body text-center">
                                     <h5 className="card-title">Vehicles Entered (today) <span style={{ color: "red" }}>{vehicleInToday}</span></h5>
-                                    {/* <br/> */}
                                     <h5 className="card-title"> Vehicles Entered (this month) <span style={{ color: "red" }}>{vehicleInMonth}</span></h5>
 
                                 </div>
@@ -125,7 +122,6 @@ const Dashboard = () => {
                             <div className="card">
                                 <div className="card-body text-center">
                                     <h5 className="card-title"> Vehicles Moved Out (today) <span style={{ color: "red" }}>{vehicleOutToday}</span></h5>
-                                    {/* <br/> */}
                                     <h5 className="card-title">Vehicles Moved Out (this month) <span style={{ color: "red" }}>{vehicleOutMonth}</span></h5>
                                 </div>
                             </div>
@@ -134,7 +130,6 @@ const Dashboard = () => {
                             <div className="card">
                                 <div className="card-body text-center">
                                     <h5 className="card-title">Total Instance (this month) <span style={{ color: "red" }}>{generatorinstance}</span></h5>
-                                    {/* <br/> */}
                                     <h5 className="card-title">Total Running Hours (this month) <span style={{ color: "red" }}>{vehicleOutMonth}</span></h5>
                                     <h5 className="card-title">Total Units (this month) <span style={{ color: "red" }}>{generatortotalunit}</span></h5>
                                     <h5 className="card-title">Average Consumption <span style={{ color: "red" }}>{vehicleOutMonth}</span></h5>
