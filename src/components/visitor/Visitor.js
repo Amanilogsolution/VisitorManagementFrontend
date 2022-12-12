@@ -84,7 +84,7 @@ function Visitor() {
                     <div className="col-md-6" style={{ margin: "100px auto" }} id="main-visitor">
                         <div className="card" >
                             <header className="card-header" >
-                                <h4 className="card-title mt-1">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
+                                <h4 className="card-title mt-1 text-light">Visitor Entry<ImEnter style={{marginLeft:"4px"}}/></h4>
                             </header>
                             <article className="card-body">
                                 <form>
@@ -162,7 +162,7 @@ function Visitor() {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }

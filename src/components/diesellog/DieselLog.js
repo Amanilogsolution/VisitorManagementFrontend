@@ -44,7 +44,7 @@ const DieselLog = () => {
                         <div className="card">
                             <header className="card-header">
 
-                                <h4 className="card-title mt-2">Diesel Log Entry<MdLibraryBooks style={{margin:"0 0 5px 4px"}}/></h4>
+                                <h4 className="card-title mt-2 text-light">Diesel Log Entry<MdLibraryBooks style={{margin:"0 0 5px 4px"}}/></h4>
                             </header>
 
 

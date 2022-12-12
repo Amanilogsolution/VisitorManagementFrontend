@@ -86,8 +86,8 @@ const Dashboard = () => {
             <div className="dashboardcont">
 
                 <Home />
-                {/* <h1>Welcome to AWL India</h1> */}
-                <div
+                <h1>Welcome to AWL India</h1>
+                {/* <div
                     style={{ width: "80%", marginLeft: "10%", marginRight: "10%" }}
                 >
                     <div className="row mt-5 d-flex justify-content-center align-items-center" >
@@ -147,7 +147,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* <Footer/> */}

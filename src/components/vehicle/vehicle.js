@@ -38,7 +38,7 @@ function Vehicle() {
                     <div className="col-md-6" style={{ margin: "100px auto" }}>
                         <div className="card">
                             <header className="card-header">
-                                <h4 className="card-title mt-1">Vehicle Entry<FaTruck style={{ marginLeft: "6px" }} /></h4>
+                                <h4 className="card-title mt-1 text-light">Vehicle Entry<FaTruck style={{ marginLeft: "6px" }} /></h4>
                             </header>
                             <article className="card-body">
                                 <form>
@@ -141,7 +141,7 @@ function Vehicle() {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }

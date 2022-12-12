@@ -105,7 +105,7 @@ const InsertGuard = () => {
 
                         <div className="card mt-5 ">
                             <header className="card-header" >
-                                <h4 className="card-title mt-1">Add Guard</h4>
+                                <h4 className="card-title mt-1 text-light">Add Guard</h4>
                             </header>
                             <div className='card-body'>
                                 <form>

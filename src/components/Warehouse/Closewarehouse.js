@@ -77,7 +77,7 @@ function Closewarehouse(prop) {
 
           {/* <div className="row justify-content-center mt-5" style={{border:"2px solid red",width:"100%"}}> */}
           <div className="col-md-6" style={{ margin: "100px auto" }}>
-            <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Opened on {format_date} </span></h2>
+            <h2 className="card-title mt-2 text-light " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Opened on {format_date} </span></h2>
 
             <div className="card">
               <header className="card-header">
@@ -158,7 +158,7 @@ function Closewarehouse(prop) {
         </div>
 
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

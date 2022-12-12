@@ -97,7 +97,7 @@ function Openwarehouse() {
                         <h2 className="card-title mt-2 " style={{ marginLeft: "10%" }}><span style={{ color: "white",textShadow:"2px 1px 4px black" }}> Warehouse is Closed on {last_date}</span></h2>
                         <div className="card">
                             <header className="card-header">
-                                <h4 className="card-title mt-2">Enter Warehouse Opening Entry <MdLibraryBooks style={{margin:"0 0 4px 4px"}}/></h4>
+                                <h4 className="card-title mt-2 text-light">Enter Warehouse Opening Entry <MdLibraryBooks style={{margin:"0 0 4px 4px"}}/></h4>
                             </header>
                             {/* {loading?( */}
                                 
@@ -170,7 +170,7 @@ function Openwarehouse() {
           </div>
         </div>
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }

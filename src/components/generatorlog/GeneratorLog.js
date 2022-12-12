@@ -39,7 +39,7 @@ function GeneratorLog() {
                     <div className="col-md-6" style={{ margin: "100px auto" }} >
                         <div className="card" >
                             <header className="card-header" >
-                                <h4 className="card-title mt-1">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
+                                <h4 className="card-title mt-1 text-light">Generator Log Book Entry <MdLibraryBooks style={{margin:"0 0 5px 0"}}/></h4>
                             </header>
 
                             <article className="card-body">
@@ -101,7 +101,7 @@ function GeneratorLog() {
                 </div></div>
             {/* </div> */}
             {/* </div> */}
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }
