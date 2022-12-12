@@ -100,7 +100,7 @@ const InsertGuard = () => {
             <div className="Total_Glogs">
                 <Home />
 
-                <div className="row d-flex justify-content-center align-items-center mt-5" style={{ width: "100%" }}>
+                <div className="row d-flex justify-content-center align-items-center mt-5 pt-5" style={{ width: "100%" }}>
                     <div className="col col-md-6">
 
                         <div className="card mt-5">
@@ -119,7 +119,8 @@ const InsertGuard = () => {
                                             id="vendid"                                                                         
                                               className="mb-3"
                                                 options={options}
-                                                isMulti={false}
+                                                isMulti={false}  
+                                                
                                                 styles={colourStyles}
                                             onChange={handleCustvendval}
                                             />
@@ -242,3 +243,4 @@ const InsertGuard = () => {
 }
 
 export default InsertGuard
+// ff
