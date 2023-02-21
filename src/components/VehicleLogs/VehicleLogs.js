@@ -28,10 +28,14 @@ function VehicleLogs() {
 
     const handleChange = async (e) => {
         e.preventDefault()
-        const result = await DedicatedVehicleStatus(localStorage.getItem('warehouseId'), e.target.value)
-        document.getElementById('status-div').style.display = 'block'
-        result == '' ? setData({ ...data, status: 'In', route: 'vehicleentry' }) : setData({ ...data, status: 'Out', route: 'vehiclereturn' })
+        let vehicletype = document.getElementById('select-vehicle')
+        const result = await DedicatedVehicleStatus(localStorage.getItem('warehouseId'), vehicletype.value)
+        document.getElementById('status-div').style.display = 'block';
 
+        let vehicletext = vehicletype.options[vehicletype.selectedIndex].text;
+        localStorage.setItem('vehicleType', vehicletext)
+        localStorage.setItem('vehicleNum', vehicletype.value)
+        result === undefined ? setData({ ...data, status: 'Out', route: 'vehicleOut' }) : setData({ ...data, status: 'In', route: 'vehicleIn' });
     }
 
     return (
@@ -44,7 +48,7 @@ function VehicleLogs() {
                             <h4 className="card-title mt-2 text-light">Vehicle Log Entry<MdLibraryBooks className='mx-2' /></h4>
                         </header>
                         <article className="card-body">
-                            <form>
+                            <form autoComplete='off'>
                                 <div className="form-group" id='select'>
                                     <h2>Select Vehicle</h2>
                                     <select className="form-control" id='select-vehicle' onChange={handleChange}>
@@ -69,7 +73,6 @@ function VehicleLogs() {
                         </article>
                     </div>
                 </div>
-
             </div>
         </>
     )

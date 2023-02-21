@@ -15,8 +15,8 @@ import GuardsLogOut from './components/Guards/GuardsLogs/Guardslogoutlogs';
 import GuardsHistory from './components/Guards/GuardsMaster/GuardHistory';
 import EditGuard from './components/Guards/GuardsMaster/EditGuard'
 import VehicleLogs from './components/VehicleLogs/VehicleLogs';
-import VehicleEntry from './components/VehicleLogs/VehicleEntry';
-import VehicleReturn from './components/VehicleLogs/VehicleReturn';
+import VehicleIn from './components/VehicleLogs/VehicleIn';
+import VehicleOut from './components/VehicleLogs/VehicleOut';
 
 
 import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
@@ -41,8 +41,9 @@ function App() {
       <Route expact path="/guardslogout" component={GuardsLogOut}/>
       <Route expact path="/guardshistory" component={GuardsHistory}/>
       <Route expact path="/vehiclelogs" component={VehicleLogs}/>
-      <Route expact path="/vehicleentry" component={VehicleEntry}/>
-      <Route expact path="/vehiclereturn" component={VehicleReturn}/>
+
+      <Route expact path="/vehicleIn" component={VehicleIn}/>
+      <Route expact path="/vehicleOut" component={VehicleOut}/>
 
 
       
