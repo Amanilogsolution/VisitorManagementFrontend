@@ -153,7 +153,7 @@ function Visitor() {
                                     }
                                     <div className="form-group">
                                         <button type="submit" id="submitBtn" onClick={handleClick} className="btn btn-primary mr-2">Submit</button>
-                                        <button type="submit" className="btn btn-secondary ">Reset</button>
+                                        <button type="reset" className="btn btn-secondary ">Reset</button>
                                     </div>
                                 </form>
                             </article>
