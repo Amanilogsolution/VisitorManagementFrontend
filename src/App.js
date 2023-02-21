@@ -19,7 +19,7 @@ import VehicleIn from './components/VehicleLogs/VehicleIn';
 import VehicleOut from './components/VehicleLogs/VehicleOut';
 
 
-import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
