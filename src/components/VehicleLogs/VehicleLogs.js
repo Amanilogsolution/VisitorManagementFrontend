@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react'
 import Home from '../Home';
 import VehicleEntry from './VehicleEntry';
 import VehicleReturn from './VehicleReturn';
-// import { Warehousecheckopen } from '../../api/index';
+import { DedicatedVehicle } from '../../api/index';
 import { MdLibraryBooks } from 'react-icons/md';
 
 
 
 function VehicleLogs() {
     const [warehouse, setWarehouse] = useState(false);
-    // const [date ,setDate] =useState();
+    const [Vehicle ,setVehicle] =useState([]);
 
     useEffect(() => {
         async function fetchMyAPI() {
-            // const result = await Warehousecheckopen(localStorage.getItem('warehouseId'))
+            const result = await DedicatedVehicle(localStorage.getItem('warehouseId'))
+            console.log(result)
+            setVehicle(result)
             // if (result) {
             //     setWarehouse(true)
             //     console.log(result.date)
@@ -41,7 +43,14 @@ function VehicleLogs() {
                                 <form>
                                     <div className="form-group" style={{marginTop:"-10px"}}>
                                         <h2>Select Vehicle</h2>
-                                        <input type="text" className="form-control" placeholder="" id="party_name" />
+                                        <select className="form-control" id='meeting_with' style={{marginLeft:"-10px",width:"103%",marginTop:"-6px"}}>
+                                            <option defaultValue hidden>Choose ...</option>
+                                            {
+                                                Vehicle.map((ele)=>(
+                                                    <option>{ele.VehType}   Vehicle No :-{ele.VehNo}</option>
+                                                ))
+                                            }
+                                            </select>
                                     </div> 
                                     <div className="form-group" style={{marginTop:"-10px"}}>
                                         <h3>Status</h3>
