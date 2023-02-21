@@ -58,6 +58,10 @@ function Navbar({ openSidebar }) {
                                 <a className="dropdown-item text-dark" href="/GeneratorLogBook"><a id="i" >Generator LogBook</a></a>
                                 <a className="dropdown-item text-dark" href="/DieselLog"><a id="i">Diesel LogBook</a></a>
                                 <a className="dropdown-item text-dark" href="Warehouse"><a id="i">Open/Close Warehouse LogBook</a></a>
+                                <a className="dropdown-item text-dark" href="vehiclelogs"><a id="i">VehicleLogs LogBook</a></a>
+
+
+                                
                             </div>
                         </li>
                          <li id="li" className="nav-item dropdown navlink">

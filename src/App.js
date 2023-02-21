@@ -14,6 +14,7 @@ import GuardsLogs from './components/Guards/GuardsLogs/guardslogs'
 import GuardsLogOut from './components/Guards/GuardsLogs/Guardslogoutlogs';
 import GuardsHistory from './components/Guards/GuardsMaster/GuardHistory';
 import EditGuard from './components/Guards/GuardsMaster/EditGuard'
+import VehicleLogs from './components/VehicleLogs/VehicleLogs';
 
 
 import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
@@ -37,6 +38,8 @@ function App() {
       <Route expact path="/guardslogs" component={GuardsLogs}/>
       <Route expact path="/guardslogout" component={GuardsLogOut}/>
       <Route expact path="/guardshistory" component={GuardsHistory}/>
+      <Route expact path="/vehiclelogs" component={VehicleLogs}/>
+
       
      </Switch>
      </Router>
