@@ -80,6 +80,8 @@ function Slider({ slider, openSidebar }) {
                                     Desiel LogBook</li></a>
                                     <a href="Warehouse"><li className="innerliste">
                                      Warehouse LogBook</li></a>
+                                     <a href="vehiclelogs"><li className="innerliste">
+                                     Vehicle LogBook</li></a>
                                 </ul>
                                 : null
                             }
