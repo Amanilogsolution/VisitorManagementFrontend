@@ -187,6 +187,10 @@ export const DedicatedVehicleOutStatus = async (wh,VEH_NO) => {
     const url = `http://192.168.146.136:8004/api/dedicatedvehicleoutstatus`
     return axios.post(url,{wh,VEH_NO}).then(response => response.data).catch(error => console.log(error));
 }
+export const UpdateDedicatedVEhicle = async (wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks) => {
+    const url = `http://192.168.146.136:8004/api/updatededicatedVEhicle`
+    return axios.post(url,{wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks}).then(response => response.data).catch(error => console.log(error));
+}
 
 
 
