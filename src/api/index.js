@@ -169,7 +169,7 @@ export const TotalGuardsHistory = async (startDate,endDate) => {
 }
 
 export const DedicatedVehicle = async (wh) => {
-    const url = `http://localhost:8004/api/dedicatedvehicle`
+    const url = `http://192.168.146.136:8004/api/dedicatedvehicle`
     return axios.post(url,{wh}).then(response => response.data).catch(error => console.log(error));
 }
 
