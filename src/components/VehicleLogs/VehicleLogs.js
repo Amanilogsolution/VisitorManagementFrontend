@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Home from '../Home';
 import VehicleEntry from './VehicleEntry';
 import VehicleReturn from './VehicleReturn';
-import { DedicatedVehicle } from '../../api/index';
+import { DedicatedVehicle,DedicatedVehicleStatus } from '../../api/index';
 import { MdLibraryBooks } from 'react-icons/md';
 
 
