@@ -5,7 +5,7 @@ import { MdLibraryBooks } from 'react-icons/md';
 
 
 
-function VehicleLogs() {
+function VehicleOut() {
   const [Vehicle, setVehicle] = useState([]);
 
 
@@ -92,4 +92,4 @@ function VehicleLogs() {
   )
 }
 
-export default VehicleLogs
+export default VehicleOut
