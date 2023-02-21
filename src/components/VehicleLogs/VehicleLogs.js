@@ -4,14 +4,12 @@ import { DedicatedVehicle, DedicatedVehicleStatus } from '../../api/index';
 import { MdLibraryBooks } from 'react-icons/md';
 
 
-
 function VehicleLogs() {
     const [Vehicle, setVehicle] = useState([]);
     const [data, setData] = useState({
         status: '',
         route: ''
     })
-
 
     useEffect(() => {
         async function fetchMyAPI() {
@@ -35,7 +33,6 @@ function VehicleLogs() {
         let vehicletext = vehicletype.options[vehicletype.selectedIndex].text;
         localStorage.setItem('vehicleType', vehicletext)
         localStorage.setItem('vehicleNum', vehicletype.value)
-        console.log(result.STATUS)
         result.STATUS === undefined||  result.STATUS==='In' ? setData({ ...data, status: 'In', route: 'vehicleOut' }) : setData({ ...data, status: 'Out', route: 'vehicleIn' });
     }
 
@@ -43,7 +40,7 @@ function VehicleLogs() {
         <>
             <div className="warehousecontainer ">
                 <Home />
-                <div className='position-absolute w-50' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+                <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
                     <div className="card ">
                         <header className="card-header">
                             <h4 className="card-title mt-2 text-light">Vehicle Log Entry<MdLibraryBooks className='mx-2' /></h4>

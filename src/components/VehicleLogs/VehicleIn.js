@@ -48,10 +48,10 @@ function VehicleOut() {
     <>
       <div className="warehousecontainer ">
         <Home />
-        <div className='position-absolute w-50' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
           <div className="card ">
             <header className="card-header">
-              <h4 className="card-title mt-2 text-light">{localStorage.getItem('vehicleType')}<MdLibraryBooks className='mx-2' /></h4>
+              <h4 className="card-title  text-light">{localStorage.getItem('vehicleType')}<MdLibraryBooks className='mx-2' /></h4>
             </header>
             <article className="card-body">
               <form autoComplete='off'>
