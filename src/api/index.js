@@ -183,6 +183,12 @@ export const InsertDedicatedVEhicle = async (wh,VEH_NO,TransDate,StartTime,Start
     return axios.post(url,{wh,VEH_NO,TransDate,StartTime,StartReading,StartEntryBy,remarks,TouchPoint}).then(response => response.data).catch(error => console.log(error));
 }
 
+export const DedicatedVehicleOutStatus = async (wh,VEH_NO) => {
+    const url = `http://192.168.146.136:8004/api/dedicatedvehicleoutstatus`
+    return axios.post(url,{wh,VEH_NO}).then(response => response.data).catch(error => console.log(error));
+}
+
+
 
 
 
