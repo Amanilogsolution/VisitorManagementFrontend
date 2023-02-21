@@ -52,6 +52,12 @@ const GuardsHistory = () => {
       sortable: true
     },
     {
+      name: "Guard Name",
+      selector: "guardname",
+      sortable: true,
+  
+    },
+    {
       name: "Login Date",
       selector: "LoginDate",
       sortable: true,
@@ -81,7 +87,16 @@ const GuardsHistory = () => {
       selector: "Status",
       sortable: true,
   
+    },
+    {
+      name: "Shift",
+      selector: "Shift",
+      sortable: true,
+  
     }
+
+
+    
   ];
 
   

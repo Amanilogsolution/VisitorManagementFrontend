@@ -124,7 +124,7 @@ const GuardsLogOut = () => {
       selector: "null",
       cell: (row) => [
 
-        <button style={{borderRadius:"1px",boxShadow:"1px 1px 1px 1px #252525",border:"none",fontSize:"13px",padding:"2px 6px"}} className="editbtn btn-secondary" onClick={handleClick}>Logout</button>
+        <button className="editbtn btn btn-secondary" onClick={handleClick}>Logout</button>
 
       ]
     }
@@ -141,7 +141,9 @@ const GuardsLogOut = () => {
 
 
     const InsertGuardLogs = await UpdateGuard(locationId, Guardname, date, time, status, guardid, localStorage.getItem('inputPassword'), locationName)
+    console.log(InsertGuardLogs)
     if (InsertGuardLogs) {
+      alert("Guard Logout")
       window.location.reload();
     } else {
       alert('Invalid Entry')

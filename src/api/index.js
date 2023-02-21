@@ -21,6 +21,7 @@ export const Allemployee = async (Warehouse) =>{
 }
 
 export const UserLogin = async (uid_id,uid_pass) => {
+    console.log(uid_id,uid_pass)
     const url = `https://vmbackend.awlinternational.com/api/loginuser`
     return axios.post(url, {uid_id,uid_pass}).then(response => response.data).catch(error => console.log(error));
 }
@@ -56,9 +57,10 @@ export const VehicleEntry = async (docNo,vehNo,vehType,driverName,contactNo,rema
     return axios.post(url,{docNo,vehNo,vehType,driverName,contactNo,remarks,wh,cust,entry_by,tpt_mode}).then(response => response.data).catch(error => console.log(error));
 }
 
-export const UploadData = async (data) => {
-    const url = `https://vmbackend.awlinternational.com/api/FileUpload`
-    return axios.post(url, data).then(res => res.data).catch(err => console.log(err))
+export const UploadData = async (images) => {
+    console.log(images)
+    const url = `http://localhost:8004/api/FileUpload`
+    return axios.post(url, images).then(res => res.data).catch(err => console.log(err))
 }
 
 export const DashboardWarehouseStatus = async (date,warehouseid) => {
@@ -114,6 +116,11 @@ export const TotalGuard = async () => {
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
 }
 
+export const SelectedGuards = async (sno) => {
+    const url = `https://vmbackend.awlinternational.com/api/SelectedGuards`
+    return axios.post(url,{sno}).then(response => response.data).catch(error => console.log(error));
+}
+
 export const DeactiveGuards = async (sno,status) => {
     const url = `https://vmbackend.awlinternational.com/api/deactiveguards`
     return axios.post(url,{sno,status}).then(response => response.data).catch(error => console.log(error));
@@ -135,12 +142,18 @@ export const GetguardmasterLogin = async (warehouse_id) => {
 }
 
 export const UpdateGuard = async (Location,Guardname,date,time,status,guardid,userid) => {
+    console.log(Location,Guardname,date,time,status,guardid,userid)
     const url = `https://vmbackend.awlinternational.com/api/updateguard`
     return axios.post(url,{Location,Guardname,date,time,status,guardid,userid}).then(response => response.data).catch(error => console.log(error));
 }
 export const ActiveLocation = async () => {
     const url = `https://vmbackend.awlinternational.com/api/activelocation`
     return axios.post(url).then(response => response.data).catch(error => console.log(error));
+}
+
+export const updateGuardDetails = async (sno,Guardname,Phoneno,Guardjoiningdate,DateOfBirth,Shift) => {
+    const url = `https://vmbackend.awlinternational.com/api/updateGuardDetails`
+    return axios.post(url,{sno,Guardname,Phoneno,Guardjoiningdate,DateOfBirth,Shift}).then(response => response.data).catch(error => console.log(error));
 }
 
 // Location

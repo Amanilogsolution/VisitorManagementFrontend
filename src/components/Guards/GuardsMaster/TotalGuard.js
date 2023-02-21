@@ -5,6 +5,7 @@ import Datatable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
 import 'react-data-table-component-extensions/dist/index.css';
 import Home from '../../Home'
+import {AiFillEdit} from 'react-icons/ai'
 
 // import Homefooter from "../../footer/footer";
 
@@ -89,7 +90,17 @@ const columns = [
         </select>
       </div>
     ]
-  }
+  }, {
+    name: "Actions",
+    sortable: false,
+    selector: 'null',
+    cell: (row) => [
+        <a title='Edit Asset' href="/EditGuard">
+            <p onClick={() => sessionStorage.setItem('getGuard', `${row.ID}`)} >
+                <AiFillEdit style={{ fontSize: "20px", marginBottom: "-13px" }} />
+            </p></a>
+    ]
+}
 
 
 ];

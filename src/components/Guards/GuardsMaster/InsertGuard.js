@@ -9,22 +9,22 @@ import Select from 'react-select';
 
 const InsertGuard = () => {
     const colourStyles = {
-        control: styles => ({ ...styles,width:'100%', backgroundColor: 'none',border:"none",borderBottom:"3px solid rgb(92,91,92)" }),
+        control: styles => ({ ...styles, width: '100%', backgroundColor: 'none', border: "none", borderBottom: "3px solid rgb(92,91,92)" }),
         option: (styles) => {
-          return {
-            ...styles,
-            backgroundColor:'rgb(39,39,52)',
-            color: '#FFF',
-            cursor:'default',
-          };
+            return {
+                ...styles,
+                backgroundColor: 'rgb(39,39,52)',
+                color: '#FFF',
+                cursor: 'default',
+            };
         },
     }
-    
+
     const [location, setLocation] = useState([])
     const [number, setNumber] = useState()
     const [shift, setShift] = useState()
     const [vendorlist, setVendorlist] = useState([])
-    const [vendor,setVendor] = useState()
+    const [vendor, setVendor] = useState()
 
     useEffect(async () => {
         const result = await ActiveLocation()
@@ -58,7 +58,7 @@ const InsertGuard = () => {
     let options = vendorlist.map((ele) => {
         return { value: ele.Tid, label: ele.Tname };
     })
-    const handleCustvendval = (e)=>{
+    const handleCustvendval = (e) => {
         setVendor(e)
 
     }
@@ -76,7 +76,7 @@ const InsertGuard = () => {
         const vendorname = vendor.label
         const Guardjoiningdate = document.getElementById('guardjoindate').value
         const dateofbirth = document.getElementById('dateofbirth').value
-        console.log(vendorid,vendorname)
+        console.log(vendorid, vendorname)
 
         console.log(Location, Guardname, Guardid, Phoneno, vendorid, vendorname, Guardjoiningdate, LocationName, dateofbirth, shift)
 
@@ -115,45 +115,32 @@ const InsertGuard = () => {
                                         <div className="form-group col-md-6" style={{ marginBottom: "-1px" }}>
                                             <label htmlFor="Invoice_Amount">Vendor Name <span style={{ color: "red" }}>*</span></label>
                                             {/* <input className="form-control" type="text" id="vendid"/> */}
-                                            <Select     
-                                            id="vendid"                                                                         
-                                              className="mb-3"
+                                            <Select
+                                                id="vendid"
+                                                className="mb-3"
                                                 options={options}
-                                                isMulti={false}  
-                                                
+                                                isMulti={false}
+
                                                 styles={colourStyles}
-                                            onChange={handleCustvendval}
+                                                onChange={handleCustvendval}
                                             />
                                         </div>
                                         <div className="form-group col-md-6" style={{ marginBottom: "-1px" }} >
                                             <label htmlFor="Invoice_Amount">Location <span style={{ color: "red" }}>*</span></label>
                                             <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
-                                                    <option selected value="" hidden>Select Location</option>
-                                                    {
-                                                        location.map(items => (
-                                                            <option value={items.WHid} >{items.WHname}</option>
+                                                <option selected value="" hidden>Select Location</option>
+                                                {
+                                                    location.map(items => (
+                                                        <option value={items.WHid} >{items.WHname}</option>
 
-                                                        ))
-                                                    }
-                                                </select>
+                                                    ))
+                                                }
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div className="mb-1">
-                                        {/* <div className="form-group" style={{ marginBottom: "5px" }}>
-                                            <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
-                                            <div className="mb-3">
-                                                <select style={{ border: "none", borderBottom: "3px solid #5c5b5c", background: "none", borderRadius: "5px" }} className="form-select w-100 p-2" id="location">
-                                                    <option selected value="" hidden>Select Location</option>
-                                                    {
-                                                        location.map(items => (
-                                                            <option value={items.WHid} >{items.WHname}</option>
 
-                                                        ))
-                                                    }
-                                                </select>
-                                            </div>
-                                        </div> */}
                                         <div className='row' style={{ marginBottom: "0px" }}>
 
                                             <div className="form-group col-md-6" style={{ marginBottom: "0px" }}>
@@ -166,10 +153,6 @@ const InsertGuard = () => {
                                             </div>
                                         </div>
 
-                                        {/* <div className="mb-3">
-                                    <label htmlFor="Invoice_Amount" className="form-label">Vendor ID <span style={{ color: "red" }}>*</span></label>
-                                    <input className="form-control" type="text" id="vendid" disabled value={localStorage.getItem('inputname')} />
-                                </div> */}
 
 
                                         <div className='row mt-1'>

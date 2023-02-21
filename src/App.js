@@ -13,6 +13,7 @@ import TotalGuards from './components/Guards/GuardsMaster/TotalGuard'
 import GuardsLogs from './components/Guards/GuardsLogs/guardslogs'
 import GuardsLogOut from './components/Guards/GuardsLogs/Guardslogoutlogs';
 import GuardsHistory from './components/Guards/GuardsMaster/GuardHistory';
+import EditGuard from './components/Guards/GuardsMaster/EditGuard'
 
 
 import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
@@ -30,10 +31,13 @@ function App() {
          <PrivatRoute exact path="/Vehicle" component={Vehicle}/>
 
          <Route expact path="/InsertGuard" component={InsertGuard}/>
+         <Route expact path="/EditGuard" component={EditGuard}/>
+
       <Route expact path="/TotalGuards" component={TotalGuards}/>
       <Route expact path="/guardslogs" component={GuardsLogs}/>
       <Route expact path="/guardslogout" component={GuardsLogOut}/>
       <Route expact path="/guardshistory" component={GuardsHistory}/>
+      
      </Switch>
      </Router>
 

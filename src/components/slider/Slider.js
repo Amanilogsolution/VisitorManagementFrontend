@@ -1,5 +1,5 @@
 import './slider.scss';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Icon from '../../images/logo.png';
 import Desiel from '../../images/deisel.png';
 import Generator from '../../images/generator.png';
@@ -13,9 +13,30 @@ import { TbLogout } from 'react-icons/tb';
 
 function Slider({ slider, openSidebar }) {
     const [show, setShow] = useState(false)
+    const [showguards, setShowguards] = useState(false)
+
+    useEffect(()=>{
+        // alert(localStorage.getItem('warehouseId'))
+        const warehouse = localStorage.getItem('warehouseId')
+        console.log(warehouse =='CORP')
+        if(warehouse =='CORP'){
+            document.getElementById('toogleGuard').style.display="block"
+
+        }else{
+            document.getElementById('toogleGuard').style.display="none"
+ 
+        }
+
+    },[])
 
     const togglediv = () => {
         setShow(!show);
+        setShowguards(false);
+
+    }
+    const toggleguarddiv = () => {
+        setShowguards(!showguards);
+        setShow(false);
 
     }
     const handlelogout = () => {
@@ -51,8 +72,9 @@ function Slider({ slider, openSidebar }) {
                         <li className="listitem outerlist" onClick={togglediv}>
                             <a><FaBook style={{margin:'0 9px 6px 2px'}}/>LogBook<AiFillCaretDown style={{margin:'0 10px 0 4px'}}/></a>
                             {show ?
-                                <ul className="innerlistes">
-                                    <a href="/GeneratorLogBook"><li className="innerliste">
+                                <ul className="innerlistes pt-0" >
+                                    <a href="/GeneratorLogBook">
+                                    <li className="innerliste mt-0"  >
                                     Generator LogBook</li></a>
                                     <a href="/DieselLog"> <li className="innerliste" style={{ width: "100%" }}>
                                     Desiel LogBook</li></a>
@@ -62,6 +84,24 @@ function Slider({ slider, openSidebar }) {
                                 : null
                             }
                         </li>
+
+                        {/* Guard */}
+
+                        <li className="listitem outerlist" style={show?{marginTop:'120px'}:null} onClick={toggleguarddiv}>
+                            <a><FaBook style={{margin:'0 9px 6px 2px'}}/>Guard<AiFillCaretDown style={{margin:'0 10px 0 4px'}}/></a>
+                            {showguards ?
+                                <ul className="innerlistes pt-0">
+                                    <a id="toogleGuard" style={{display:"none"}} href="/TotalGuards"><li className="innerliste">
+                                    Show Guards</li></a>
+                                    <a href="/guardslogs"> <li className="innerliste" style={{ width: "100%" }}>
+                                    Guard Login</li></a>
+                                    <a href="guardslogout"><li className="innerliste">
+                                     Guard Logout</li></a>
+                                </ul>
+                                : null
+                            }
+                        </li>
+                        
                     </ul>
                     <ul className="bottomlists">
                         <li className="bottomlist arrow" onClick={handlelogout} > Logout <TbLogout style={{ margin: "2px 6px 2px 4px", fontSize: "21px" }}/>

@@ -46,7 +46,7 @@ const GuardsLogs = () => {
         selector: "Location",
       sortable: true,
       cell: (row) => [
-        <p id={`location${row.ID}`} >{row.locationname} {row.Location}</p>
+        <p id={`location${row.ID}`} >{row.locationname}, {row.Location}</p>
       ]
     },
     {
@@ -104,18 +104,20 @@ const GuardsLogs = () => {
       selector: "null",
       cell: (row) => [
 
-        <button className="editbtn btn-secondary" style={{borderRadius:"1px",boxShadow:"1px 1px 1px 1px #252525",border:"none",fontSize:"13px",padding:"2px 6px"}} onClick={handleClick}>Login</button>
+        <button id={`submitBtn${row.ID}`} className="editbtn btn btn-secondary" style={{boxSize:"",boxShadow:"1px 1px 1px 1px #252525",border:"none",fontSize:"13px"}} onClick={handleClick}>Login</button>
 
       ]
     }
   ];
 
   const handleClick = async (e) => {
+    document.getElementById(`submitBtn${sno}`).disabled = true
+
     const date = document.getElementById(`date${sno}`).value
     const time = document.getElementById(`time${sno}`).value
     const status = 'Login'
     const locationname = document.getElementById(`location${sno}`).innerHTML
-    var [locationName, locationId] = locationname.split(" ")
+    var [locationName, locationId] = locationname.split(", ")
     console.log(locationId)
     const Guardname = document.getElementById(`guardname${sno}`).innerHTML
     const guardid = document.getElementById(`guardId${sno}`).innerHTML
@@ -123,8 +125,9 @@ const GuardsLogs = () => {
     console.log(locationId, Guardname, date, time, status, guardid, locationName)
 
 
-    const InsertGuardLogs = await InsertGuardLogin(locationId, Guardname, date, time, status, guardid, localStorage.getItem('inputPassword'), locationName)
+    const InsertGuardLogs = await InsertGuardLogin(locationId, Guardname, date, time, status, guardid, localStorage.getItem('userId'), locationName)
     if (InsertGuardLogs) {
+      alert("Guard Login")
       window.location.reload();
     } else {
       alert('Something went Wrong')

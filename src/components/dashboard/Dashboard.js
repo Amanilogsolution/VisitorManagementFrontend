@@ -1,7 +1,9 @@
 import './dashboard.scss';
 import Home from '../Home';
 import { DashboardWarehouseStatus, DashboardVisitorStatus, DashboardVehicleInStatus, DashboardVehicleOutStatus, DashboardDieselLitreMonth, DashboardDieselAmountMonth, DashboardGeneratorInstanceMonth, DashboardGeneratorTotalUnitMonth } from '../../api/index'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import Footer from '../footer/Footer';
+
 
 
 const Dashboard = () => {
@@ -150,7 +152,7 @@ const Dashboard = () => {
                 </div> */}
             </div>
 
-            {/* <Footer/> */}
+            <Footer/>
         </>
     )
 }
