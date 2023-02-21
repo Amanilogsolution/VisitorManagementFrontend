@@ -36,7 +36,8 @@ function VehicleLogs() {
         let vehicletext = vehicletype.options[vehicletype.selectedIndex].text;
         localStorage.setItem('vehicleType', vehicletext)
         localStorage.setItem('vehicleNum', vehicletype.value)
-        result === undefined ? setData({ ...data, status: 'Out', route: 'vehicleOut' }) : setData({ ...data, status: 'In', route: 'vehicleIn' });
+        console.log(result.STATUS)
+        result.STATUS === undefined||  result.STATUS==='In' ? setData({ ...data, status: 'Out', route: 'vehicleOut' }) : setData({ ...data, status: 'In', route: 'vehicleIn' });
     }
 
     return (
