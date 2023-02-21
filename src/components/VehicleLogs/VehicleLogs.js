@@ -47,7 +47,7 @@ function VehicleLogs() {
                                             <option defaultValue hidden>Choose ...</option>
                                             {
                                                 Vehicle.map((ele)=>(
-                                                    <option>{ele.VehType}   Vehicle No :-{ele.VehNo}</option>
+                                                    <option key={ele.ID} value={ele.VehNo}>{ele.VehType}   Vehicle No :-{ele.VehNo}</option>
                                                 ))
                                             }
                                             </select>
