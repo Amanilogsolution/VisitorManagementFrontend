@@ -31,7 +31,6 @@ function VehicleLogs() {
         let vehicletype = document.getElementById('select-vehicle')
         const result = await DedicatedVehicleStatus(localStorage.getItem('warehouseId'), vehicletype.value)
         document.getElementById('status-div').style.display = 'block';
-
         let vehicletext = vehicletype.options[vehicletype.selectedIndex].text;
         localStorage.setItem('vehicleType', vehicletext)
         localStorage.setItem('vehicleNum', vehicletype.value)
