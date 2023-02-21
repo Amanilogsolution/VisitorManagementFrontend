@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Home from '../Home';
-import VehicleEntry from './VehicleEntry';
-import VehicleReturn from './VehicleReturn';
-import { DedicatedVehicle,DedicatedVehicleStatus } from '../../api/index';
+import { DedicatedVehicle, DedicatedVehicleStatus } from '../../api/index';
 import { MdLibraryBooks } from 'react-icons/md';
 
 
 
 function VehicleLogs() {
     const [Vehicle, setVehicle] = useState([]);
-    const [data,setData]=useState({
-        status:'',
-        route:''
+    const [data, setData] = useState({
+        status: '',
+        route: ''
     })
-    // const [route,setRoute]=useState('')
 
 
     useEffect(() => {
         async function fetchMyAPI() {
             const result = await DedicatedVehicle(localStorage.getItem('warehouseId'))
-            console.log(result)
             setVehicle(result)
-          
         }
         fetchMyAPI()
     }, [])
@@ -29,15 +24,13 @@ function VehicleLogs() {
     const handleClick = (e) => {
         e.preventDefault();
         window.location.href = `${data.route}`
-         alert(data.route)
     }
 
-    const handleChange = async(e) => {
+    const handleChange = async (e) => {
         e.preventDefault()
-        console.log(e.target.value)
-        const result = await DedicatedVehicleStatus(localStorage.getItem('warehouseId'),e.target.value)
-        console.log(result)
-        result==''?setData({...data,status:'In',route:'vehicleentry'}):setData({...data,status:'Out',route:'vehiclereturn'})
+        const result = await DedicatedVehicleStatus(localStorage.getItem('warehouseId'), e.target.value)
+        document.getElementById('status-div').style.display = 'block'
+        result == '' ? setData({ ...data, status: 'In', route: 'vehicleentry' }) : setData({ ...data, status: 'Out', route: 'vehiclereturn' })
 
     }
 
@@ -48,13 +41,13 @@ function VehicleLogs() {
                 <div className='position-absolute w-50' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
                     <div className="card ">
                         <header className="card-header">
-                            <h4 className="card-title mt-2 text-light">Vehicle Log Entry<MdLibraryBooks style={{ margin: "0 0 5px 4px" }} /></h4>
+                            <h4 className="card-title mt-2 text-light">Vehicle Log Entry<MdLibraryBooks className='mx-2' /></h4>
                         </header>
                         <article className="card-body">
                             <form>
-                                <div className="form-group" style={{ marginTop: "-10px" }} id='select'>
+                                <div className="form-group" id='select'>
                                     <h2>Select Vehicle</h2>
-                                    <select className="form-control" id='select-vehicle' onChange={handleChange} style={{ marginLeft: "-10px", width: "103%", marginTop: "-6px" }}>
+                                    <select className="form-control" id='select-vehicle' onChange={handleChange}>
                                         <option value='' hidden>Choose ...</option>
                                         {
                                             Vehicle.map((ele) => (
@@ -63,16 +56,17 @@ function VehicleLogs() {
                                         }
                                     </select>
                                 </div>
-                                <div className="form-group" style={{ marginTop: "-10px" }} id='select'>
-                                    <h3>Status</h3>
-                                    <input type="text" className="form-control" id="Closeby" defaultValue={data.status} />
-
+                                <div id='status-div' style={{ display: 'none' }}>
+                                    <div className="form-group" id='select '>
+                                        <h3>Status :- <span className='text-danger'>{data.status}</span></h3>
+                                    </div>
+                                    <div className="card-footer d-flex justify-content-end">
+                                        <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Update</button>
+                                        <button type="reset" className="btn btn-secondary  " value='Reset' >Reset</button>
+                                    </div>
                                 </div>
-                                <div className="form-group">
-                                    <button type="submit" onClick={handleClick} id="submitBtn" className="btn btn-primary mr-2">Update</button>
-                                    <input type="reset" style={{ background: "gray", marginTop: "2px" }} className="btn btn-secondary mt-1 " value='Reset' />                                                                           </div> {/* form-group// */}
                             </form>
-                        </article> {/* card-body end .// */}
+                        </article>
                     </div>
                 </div>
 
