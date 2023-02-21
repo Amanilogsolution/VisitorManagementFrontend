@@ -59,7 +59,7 @@ export const VehicleEntry = async (docNo,vehNo,vehType,driverName,contactNo,rema
 
 export const UploadData = async (images) => {
     console.log(images)
-    const url = `http://localhost:8004/api/FileUpload`
+    const url = `https://vmbackend.awlinternational.com/api/FileUpload`
     return axios.post(url, images).then(res => res.data).catch(err => console.log(err))
 }
 
@@ -167,6 +167,13 @@ export const TotalGuardsHistory = async (startDate,endDate) => {
     const url = `https://vmbackend.awlinternational.com/api/totalguardshistory`
     return axios.post(url,{startDate,endDate}).then(response => response.data).catch(error => console.log(error));
 }
+
+export const DedicatedVehicle = async (wh) => {
+    const url = `http://192.168.146.136:8004/api/dedicatedvehicle`
+    return axios.post(url,{wh}).then(response => response.data).catch(error => console.log(error));
+}
+
+
 
 
 
