@@ -22,7 +22,6 @@ function Visitor() {
             var startDate = year + "-" + month + "-" + day;
             document.getElementById('entrydate').value = startDate
 
-
             const result = await Allemployee(localStorage.getItem("warehouseId"));
        
             setSelectdata(result)
