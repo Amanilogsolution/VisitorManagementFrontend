@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Home from '../Home';
 import { InsertDedicatedVEhicle } from '../../api/index';
 import { MdLibraryBooks } from 'react-icons/md';
@@ -6,18 +6,6 @@ import { MdLibraryBooks } from 'react-icons/md';
 
 
 function VehicleOut() {
-  const [Vehicle, setVehicle] = useState([]);
-
-
-
-  // useEffect(() => {
-  //   async function fetchMyAPI() {
-  //     const result = await DedicatedVehicle(localStorage.getItem('warehouseId'))
-  //     setVehicle(result)
-  //   }
-  //   fetchMyAPI()
-  // }, [])
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,9 +22,14 @@ function VehicleOut() {
       let wh=localStorage.getItem('warehouseId');
       let VEH_NO= localStorage.getItem('vehicleNum')
       let StartEntryBy= localStorage.getItem('userId')
-      // wh,VEH_NO,TransDate,StartTime,StartReading,StartEntryBy,remarks,TouchPoint
       const insert = await InsertDedicatedVEhicle(wh,VEH_NO,outdate,start_time,start_reading,StartEntryBy,remark,touch_point)
-      console.log(insert)
+      if (insert === 'inserted') {
+        alert('Data Inserted')
+        window.location.href='./vehiclelogs'
+      }
+      else {
+        alert('Server Not Response')
+      }
     }
   }
 
