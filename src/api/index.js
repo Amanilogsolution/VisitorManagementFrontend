@@ -173,9 +173,9 @@ export const DedicatedVehicle = async (wh) => {
     return axios.post(url,{wh}).then(response => response.data).catch(error => console.log(error));
 }
 
-export const DedicatedVehicleStatus = async (wh) => {
+export const DedicatedVehicleStatus = async (wh,VEH_NO) => {
     const url = `http://localhost:8004/api/dedicatedvehiclestatus`
-    return axios.post(url,{wh}).then(response => response.data).catch(error => console.log(error));
+    return axios.post(url,{wh,VEH_NO}).then(response => response.data).catch(error => console.log(error));
 }
 
 
