@@ -19,35 +19,33 @@ import VehicleEntry from './components/VehicleLogs/VehicleEntry';
 import VehicleReturn from './components/VehicleLogs/VehicleReturn';
 
 
-import {Route,Switch,BrowserRouter as Router} from 'react-router-dom'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-     <Router>
-     <Switch>
-         <Route exact path="/" component={Login}/>
-         <PrivatRoute exact path="/Dashboard" component={Dashboard}/>
-         <PrivatRoute exact path="/DieselLog" component={DieselLog}/>
-         <PrivatRoute exact path="/GeneratorLogBook" component={GeneratorLogBook}/>
-         <PrivatRoute exact path="/VisitorLogBook" component={Visitor}/>
-         <PrivatRoute exact path="/Warehouse" component={Warehouse}/>
-         <PrivatRoute exact path="/Vehicle" component={Vehicle}/>
-
-         <Route expact path="/InsertGuard" component={InsertGuard}/>
-         <Route expact path="/EditGuard" component={EditGuard}/>
-
-      <Route expact path="/TotalGuards" component={TotalGuards}/>
-      <Route expact path="/guardslogs" component={GuardsLogs}/>
-      <Route expact path="/guardslogout" component={GuardsLogOut}/>
-      <Route expact path="/guardshistory" component={GuardsHistory}/>
-      <Route expact path="/vehiclelogs" component={VehicleLogs}/>
-      <Route expact path="/vehicleentry" component={VehicleEntry}/>
-      <Route expact path="/vehiclereturn" component={VehicleReturn}/>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <PrivatRoute exact path="/Dashboard" component={Dashboard} />
+          <PrivatRoute exact path="/DieselLog" component={DieselLog} />
+          <PrivatRoute exact path="/GeneratorLogBook" component={GeneratorLogBook} />
+          <PrivatRoute exact path="/VisitorLogBook" component={Visitor} />
+          <PrivatRoute exact path="/Warehouse" component={Warehouse} />
+          <PrivatRoute exact path="/Vehicle" component={Vehicle} />
+          <Route expact path="/InsertGuard" component={InsertGuard} />
+          <Route expact path="/EditGuard" component={EditGuard} />
+          <Route expact path="/TotalGuards" component={TotalGuards} />
+          <Route expact path="/guardslogs" component={GuardsLogs} />
+          <Route expact path="/guardslogout" component={GuardsLogOut} />
+          <Route expact path="/guardshistory" component={GuardsHistory} />
+          <Route expact path="/vehiclelogs" component={VehicleLogs} />
+          <Route expact path="/vehicleentry" component={VehicleEntry} />
+          <Route expact path="/vehiclereturn" component={VehicleReturn} />
 
 
-      
-     </Switch>
-     </Router>
+
+        </Switch>
+      </Router>
 
     </div>
   );
