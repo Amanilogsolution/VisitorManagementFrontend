@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Home from '../Home';
 import { DedicatedVehicle, DedicatedVehicleStatus } from '../../api/index';
-import { MdLibraryBooks } from 'react-icons/md';
+import { FaTruck } from 'react-icons/fa';
 
 
 function VehicleLogs() {
@@ -43,7 +43,7 @@ function VehicleLogs() {
                 <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
                     <div className="card ">
                         <header className="card-header">
-                            <h4 className="card-title mt-2 text-light">Vehicle Log Entry<MdLibraryBooks className='mx-2' /></h4>
+                            <h4 className="card-title mt-2 text-light">Vehicle LogBook<FaTruck className='mx-2' /></h4>
                         </header>
                         <article className="card-body">
                             <form autoComplete='off'>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Home from '../Home';
 import { DedicatedVehicleOutStatus, UpdateDedicatedVEhicle } from '../../api/index';
-import { MdLibraryBooks } from 'react-icons/md';
+import { FaTruck } from 'react-icons/fa';
 
 
 
@@ -51,7 +51,7 @@ function VehicleOut() {
         <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
           <div className="card ">
             <header className="card-header">
-              <h4 className="card-title  text-light">{localStorage.getItem('vehicleType')}<MdLibraryBooks className='mx-2' /></h4>
+              <h4 className="card-title  text-light">{localStorage.getItem('vehicleType')}<FaTruck className='mx-2' /></h4>
             </header>
             <article className="card-body">
               <form autoComplete='off'>
