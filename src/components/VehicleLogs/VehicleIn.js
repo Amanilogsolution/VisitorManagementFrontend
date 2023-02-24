@@ -14,6 +14,7 @@ function VehicleOut() {
     async function fetchMyAPI() {
       const result = await DedicatedVehicleOutStatus(localStorage.getItem('warehouseId'), localStorage.getItem('vehicleNum'))
       setVehicledata(result)
+      console.log(result)
     }
     fetchMyAPI()
   }, [])
@@ -55,10 +56,16 @@ function VehicleOut() {
             </header>
             <article className="card-body">
               <form autoComplete='off'>
+                <h3>Planned Touch Points:- {Vehicledata.TOUCH_POINT}</h3>
+                <h3>Date:- {Vehicledata.date}</h3>
                 <div className='row'>
                   <div className="form-group col">
                     <label htmlFor='outdate'> Date </label>
                     <input type="date" id="outdate" className="form-control" disabled defaultValue={Vehicledata.date} />
+                  </div>
+                  <div className="form-group col">
+                    <label htmlFor='outdate'> Complete Touch Points </label>
+                    <input type="number" id="outdate" className="form-control"/>
                   </div>
 
                 </div>
