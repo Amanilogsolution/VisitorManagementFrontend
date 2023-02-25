@@ -50,7 +50,7 @@ function VehicleOut() {
                     <input type="date" id="outdate" className="form-control" />
                   </div>
                   <div className="form-group col-md-6">
-                    <label htmlFor='touch_point'>Touch Point</label>
+                    <label htmlFor='touch_point'>Touch Points</label>
                     <input type="number" className="form-control" id='touch_point' />
                   </div>
                 </div>
