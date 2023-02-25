@@ -62,7 +62,7 @@ function VehicleOut() {
               <form autoComplete='off'>
                 <div className='row'>
                   <div className="form-group col">
-                    <h3 >  Planned Touch Points:- {Vehicledata.TOUCH_POINT} </h3>
+                    <h3 >  Planned Touch Points:- <span className='text-danger'>{Vehicledata.TOUCH_POINT}</span> </h3>
                     {/* <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/> */}
                   </div>
                   <div className="form-group col">
