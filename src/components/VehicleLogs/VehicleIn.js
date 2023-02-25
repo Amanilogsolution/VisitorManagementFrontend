@@ -14,6 +14,7 @@ function VehicleOut() {
     async function fetchMyAPI() {
       const result = await DedicatedVehicleOutStatus(localStorage.getItem('warehouseId'), localStorage.getItem('vehicleNum'))
       setVehicledata(result)
+      console.log(result)
     }
     fetchMyAPI()
   }, [])
@@ -21,22 +22,22 @@ function VehicleOut() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const outdate = document.getElementById('outdate').value;
+    const completed_touch_point = document.getElementById('completed_touch_point').value;
     const return_time = document.getElementById('return_time').value;
     const return_reading = document.getElementById('return_reading').value;
     const remark = document.getElementById('remark').value;
 
-    if (!outdate || !return_time || !return_reading || !remark) {
+    if (!completed_touch_point || !return_time || !return_reading || !remark) {
       alert('Please Enter the Mandatory Field')
     }
     else {
       let wh = localStorage.getItem('warehouseId');
       let VEH_NO = localStorage.getItem('vehicleNum')
       let Returnentryby = localStorage.getItem('userId')
-      const update = await UpdateDedicatedVEhicle(wh, VEH_NO, return_time, return_reading, Returnentryby, remark)
+      const update = await UpdateDedicatedVEhicle(wh, VEH_NO, return_time, return_reading, Returnentryby, remark,completed_touch_point)
       if (update === 'updated') {
         alert('Data Updated');
-        window.location.href='./vehiclelogs'
+        window.location.href = './vehiclelogs'
       }
       else {
         alert('Server Not Response')
@@ -55,10 +56,20 @@ function VehicleOut() {
             </header>
             <article className="card-body">
               <form autoComplete='off'>
+                <h3 className='d-flex justify-content-between'>
+                  <span>Date :- <span className='text-danger'>{Vehicledata.date}</span></span>
+                  <span>Time :- <span className='text-danger'>{Vehicledata.time}</span></span>
+                </h3>
+
+                <h3></h3>
                 <div className='row'>
                   <div className="form-group col">
-                    <label htmlFor='outdate'> Date </label>
-                    <input type="date" id="outdate" className="form-control" disabled defaultValue={Vehicledata.date} />
+                    <label htmlFor='outdate'>  Planned Touch Points </label>
+                    <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/>
+                  </div>
+                  <div className="form-group col">
+                    <label htmlFor='completed_touch_point'> Completed Touch Points </label>
+                    <input type="number" id="completed_touch_point" className="form-control" />
                   </div>
 
                 </div>
