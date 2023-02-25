@@ -33,7 +33,8 @@ function VehicleLogs() {
         let vehicletext = vehicletype.options[vehicletype.selectedIndex].text;
         localStorage.setItem('vehicleType', vehicletext)
         localStorage.setItem('vehicleNum', vehicletype.value)
-        result.STATUS === undefined||  result.STATUS==='In' ? setData({ ...data, status: 'In', route: 'vehicleOut' }) : setData({ ...data, status: 'Out', route: 'vehicleIn' });
+        console.log(result)
+        result.STATUS === undefined ||  result.STATUS==='In' ? setData({ ...data, status: 'In Warehouse', route: 'vehicleOut' }) : setData({ ...data, status: 'Out from Warehouse', route: 'vehicleIn' });
     }
 
     return (
@@ -53,7 +54,7 @@ function VehicleLogs() {
                                         <option value='' hidden>Choose ...</option>
                                         {
                                             Vehicle.map((ele) => (
-                                                <option key={ele.ID} value={ele.VehNo}>{ele.VehType}   Vehicle No :-{ele.VehNo}</option>
+                                                <option key={ele.ID} value={ele.VehNo}>{ele.VehType} , {ele.VehNo}</option>
                                             ))
                                         }
                                     </select>
