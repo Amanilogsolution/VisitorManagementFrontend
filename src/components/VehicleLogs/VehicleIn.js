@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Home from '../Home';
 import { DedicatedVehicleOutStatus, UpdateDedicatedVEhicle } from '../../api/index';
 import { FaTruck } from 'react-icons/fa';
-
+import './Vehicle.scss'
 
 
 function VehicleOut() {
@@ -34,7 +34,7 @@ function VehicleOut() {
       let wh = localStorage.getItem('warehouseId');
       let VEH_NO = localStorage.getItem('vehicleNum')
       let Returnentryby = localStorage.getItem('userId')
-      const update = await UpdateDedicatedVEhicle(wh, VEH_NO, return_time, return_reading, Returnentryby, remark,completed_touch_point)
+      const update = await UpdateDedicatedVEhicle(wh, VEH_NO, return_time, return_reading, Returnentryby, remark, completed_touch_point)
       if (update === 'updated') {
         alert('Data Updated');
         window.location.href = './vehiclelogs'
@@ -49,23 +49,21 @@ function VehicleOut() {
     <>
       <div className="warehousecontainer ">
         <Home />
-        <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div className="col-md-6" style={{ margin: "100px auto " }} >
           <div className="card ">
             <header className="card-header">
               <h4 className="card-title  text-light">{localStorage.getItem('vehicleType')}<FaTruck className='mx-2' /></h4>
             </header>
             <article className="card-body">
+              <h3 className='vehicle-heading d-flex '>
+                <span>Date :- <span className='text-danger'>{Vehicledata.date}</span></span>
+                <span>Time :- <span className='text-danger'>{Vehicledata.time}</span></span>
+              </h3>
               <form autoComplete='off'>
-                <h3 className='d-flex justify-content-between'>
-                  <span>Date :- <span className='text-danger'>{Vehicledata.date}</span></span>
-                  <span>Time :- <span className='text-danger'>{Vehicledata.time}</span></span>
-                </h3>
-
-                <h3></h3>
                 <div className='row'>
                   <div className="form-group col">
-                    <label htmlFor='outdate'>  Planned Touch Points </label>
-                    <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/>
+                    <h3 >  Planned Touch Points:- {Vehicledata.TOUCH_POINT} </h3>
+                    {/* <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/> */}
                   </div>
                   <div className="form-group col">
                     <label htmlFor='completed_touch_point'> Completed Touch Points </label>
