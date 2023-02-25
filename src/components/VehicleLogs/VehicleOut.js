@@ -37,7 +37,7 @@ function VehicleOut() {
     <>
       <div className="warehousecontainer ">
         <Home />
-        <div className='position-absolute col-md-6' style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div className="col-md-6" style={{ margin: "100px auto " }} >
           <div className="card ">
             <header className="card-header">
               <h4 className="card-title text-light">{localStorage.getItem('vehicleType')}<FaTruck className='mx-2' /></h4>
