@@ -169,27 +169,27 @@ export const TotalGuardsHistory = async (startDate,endDate) => {
 }
 
 export const DedicatedVehicle = async (wh) => {
-    const url = `http://192.168.146.136:8004/api/dedicatedvehicle`
+    const url = `http://192.168.146.144:8004/api/dedicatedvehicle`
     return axios.post(url,{wh}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const DedicatedVehicleStatus = async (wh,VEH_NO) => {
-    const url = `http://192.168.146.136:8004/api/dedicatedvehiclestatus`
+    const url = `http://192.168.146.144:8004/api/dedicatedvehiclestatus`
     return axios.post(url,{wh,VEH_NO}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const InsertDedicatedVEhicle = async (wh,VEH_NO,TransDate,StartTime,StartReading,StartEntryBy,remarks,TouchPoint) => {
-    const url = `http://192.168.146.136:8004/api/insertdedicatedVEhicle`
+    const url = `http://192.168.146.144:8004/api/insertdedicatedVEhicle`
     return axios.post(url,{wh,VEH_NO,TransDate,StartTime,StartReading,StartEntryBy,remarks,TouchPoint}).then(response => response.data).catch(error => console.log(error));
 }
 
 export const DedicatedVehicleOutStatus = async (wh,VEH_NO) => {
-    const url = `http://192.168.146.136:8004/api/dedicatedvehicleoutstatus`
+    const url = `http://192.168.146.144:8004/api/dedicatedvehicleoutstatus`
     return axios.post(url,{wh,VEH_NO}).then(response => response.data).catch(error => console.log(error));
 }
-export const UpdateDedicatedVEhicle = async (wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks) => {
-    const url = `http://192.168.146.136:8004/api/updatededicatedVEhicle`
-    return axios.post(url,{wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks}).then(response => response.data).catch(error => console.log(error));
+export const UpdateDedicatedVEhicle = async (wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks,CompleteTouchPoint) => {
+    const url = `http://192.168.146.144:8004/api/updatededicatedVEhicle`
+    return axios.post(url,{wh,VEH_NO,Returntime,Returnreading,Returnentryby,remarks,CompleteTouchPoint}).then(response => response.data).catch(error => console.log(error));
 }
 
 
