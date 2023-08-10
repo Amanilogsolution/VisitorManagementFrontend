@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Home from '../Home';
 import { InsertDedicatedVEhicle } from '../../api/index';
 import { FaTruck } from 'react-icons/fa';
@@ -6,6 +6,7 @@ import { FaTruck } from 'react-icons/fa';
 
 
 function VehicleOut() {
+  const [leave,setLeave]= useState('Out')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,15 +15,18 @@ function VehicleOut() {
     const start_time = document.getElementById('start_time').value;
     const start_reading = document.getElementById('start_reading').value;
     const remark = document.getElementById('remark').value;
+    // console.log(leave)
 
-    if (!outdate || !start_time || !start_reading || !remark) {
+    if (!outdate 
+      //  || !start_time || !start_reading || !remark
+       ) {
       alert('Please Enter the Mandatory Field')
     }
     else {
       let wh=localStorage.getItem('warehouseId');
       let VEH_NO= localStorage.getItem('vehicleNum')
       let StartEntryBy= localStorage.getItem('userId')
-      const insert = await InsertDedicatedVEhicle(wh,VEH_NO,outdate,start_time,start_reading,StartEntryBy,remark,touch_point)
+      const insert = await InsertDedicatedVEhicle(wh,VEH_NO,outdate,start_time,start_reading,StartEntryBy,remark,touch_point,leave)
       if (insert === 'inserted') {
         alert('Data Inserted')
         window.location.href='./vehiclelogs'
@@ -44,6 +48,14 @@ function VehicleOut() {
             </header>
             <article className="card-body">
               <form autoComplete='off'>
+              <div className='row'>
+                  <div className="form-group col-md-6">
+                  
+                  </div>
+                  <div className="form-group col-md-6">
+                  <button className='btn btn-success float-right' onClick={(e)=>{e.preventDefault();setLeave('leave')}}>Leave</button>
+                  </div>
+                </div>
                 <div className='row'>
                   <div className="form-group col-md-6">
                     <label htmlFor='outdate'> Date </label>

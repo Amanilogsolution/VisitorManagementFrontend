@@ -34,7 +34,7 @@ function VehicleLogs() {
         localStorage.setItem('vehicleType', vehicletext)
         localStorage.setItem('vehicleNum', vehicletype.value)
         console.log(result)
-        result.STATUS === undefined ||  result.STATUS==='In' ? setData({ ...data, status: 'In Warehouse', route: 'vehicleOut' }) : setData({ ...data, status: 'Out from Warehouse', route: 'vehicleIn' });
+        result.STATUS === undefined ||  result.STATUS==='In' || result.STATUS==='leave' ? setData({ ...data, status: 'In Warehouse', route: 'vehicleOut' }) : setData({ ...data, status: 'Out from Warehouse', route: 'vehicleIn' });
     }
 
     return (

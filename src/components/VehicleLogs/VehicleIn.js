@@ -60,19 +60,25 @@ function VehicleOut() {
                 <span>Time :- <span className='text-danger'>{Vehicledata.time}</span></span>
               </h3>
               <form autoComplete='off'>
-                <div className='row'>
+                <div className='row '>
+
                   <div className="form-group col">
                     <h3 >  Planned Touch Points:- <span className='text-danger'>{Vehicledata.TOUCH_POINT}</span> </h3>
                     {/* <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/> */}
                   </div>
-                  <div className="form-group col">
-                    <label htmlFor='completed_touch_point'> Completed Touch Points </label>
-                    <input type="number" id="completed_touch_point" className="form-control" />
+                  <div className="form-group col  text-right">
+                    <h3 > Start Reading:- <span className='text-danger'>{Vehicledata.START_READING}</span> </h3>
+                    {/* <input type="number" id="outdate" className="form-control" disabled defaultValue={Vehicledata.TOUCH_POINT} style={{cursor:'not-allowed'}}/> */}
                   </div>
+                  
 
                 </div>
 
                 <div className='row'>
+                <div className="form-group col">
+                    <label htmlFor='completed_touch_point'> Completed Touch Points </label>
+                    <input type="number" id="completed_touch_point" className="form-control" />
+                  </div>
                   <div className="form-group col-md-6">
                     <label htmlFor='return_time'>Return Time</label>
                     <input type="time" className="form-control" id='return_time' />

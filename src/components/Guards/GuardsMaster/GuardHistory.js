@@ -6,11 +6,8 @@ import 'react-data-table-component-extensions/dist/index.css';
 import Home from '../../Home'
 import { DatePicker } from "antd";
 import Moment from "moment";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 const { RangePicker } = DatePicker;
-
-
-
 
 const customStyles = {
   title: {
@@ -92,11 +89,7 @@ const GuardsHistory = () => {
       name: "Shift",
       selector: "Shift",
       sortable: true,
-  
     }
-
-
-    
   ];
 
   

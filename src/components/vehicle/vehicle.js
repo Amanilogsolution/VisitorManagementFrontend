@@ -42,6 +42,7 @@ function Vehicle() {
                             </header>
                             <article className="card-body">
                                 <form>
+                                
                                     <div className='row' style={{marginTop:"-10px"}} >
                                         <div className="form-group col-md-6">
                                             <label>Entry Type </label>
